@@ -1,0 +1,22 @@
+.card{
+  cursor: pointer;
+  padding: 30px;
+  max-width: 300px;
+  margin-top: 15px;
+}
+
+img{
+  border-radius: 10px;
+  width: 200px;
+  height: 133px;
+}
+
+.card:hover{
+  transition: 1s;
+  background-color: coral;
+}
+
+button{
+  background-color: #cecece;
+  margin-top: 5px;
+}

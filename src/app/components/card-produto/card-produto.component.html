@@ -1,0 +1,16 @@
+<mat-card
+  class="card"
+  fxLayout="column"
+  fxLayoutAlign="start center"
+  class="card"
+  *ngFor="let card of cardProdutos"
+>
+  <mat-card-header>
+    <mat-card-title>{{ card.titulo }}</mat-card-title>
+    <mat-card-subtitle>R$ {{ card.valor }}</mat-card-subtitle>
+  </mat-card-header>
+  <img matCardImage src="{{ card.foto }}" />
+  <mat-card-content> {{ card.descricao }} </mat-card-content>
+  <button mat-button>ADICIONAR AO CARRINHO</button>
+  <button mat-button>COMPRAR</button>
+</mat-card>

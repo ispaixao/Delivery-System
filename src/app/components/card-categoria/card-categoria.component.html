@@ -1,0 +1,13 @@
+<mat-card
+  class="card"
+  fxLayout="column"
+  fxLayoutAlign="start center"
+  [routerLink]="card.routerLink"
+  *ngFor="let card of cardCategoria"
+
+
+
+>
+    <h3>{{card.titulo}}</h3>
+  <img matCardImage src="{{ card.foto }}" />
+</mat-card>
