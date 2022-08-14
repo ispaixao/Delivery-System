@@ -2,10 +2,10 @@
   "produtos": [
     {
       "id": 1,
-      "titulo": "Lanche",
-      "valor": 99.2,
-      "foto": "assets/pizzas/logo_categoria.jpg",
-      "descricao": "O maior lanche",
+      "titulo": "Flávia",
+      "valor": 99.25,
+      "foto": "assets/Hamburgueres/ham_logo.jpg",
+      "descricao": "Pão brioche, maionese temperada, 2 hamburgueres de 120g cada, queijo cheddar, fatias de bacon crocantes, alface americano e cebola caramelizada.",
       "categoria": "2"
     },
     {
@@ -20,7 +20,7 @@
       "id": 3,
       "titulo": "Fritas",
       "valor": 9.2,
-      "foto": "assets/pizzas/logo_categoria.jpg",
+      "foto": "assets/Fritas/batata_logo.jpg",
       "descricao": "Fritas torradas",
       "categoria": "3"
     },
@@ -28,35 +28,48 @@
       "id": 4,
       "titulo": "Refri",
       "valor": 9.2,
-      "foto": "assets/pizzas/logo_categoria.jpg",
+      "foto": "assets/Bebidas/logo.png",
       "descricao": "Refri",
-      "categoria": "Bebida"
+      "categoria": "4"
+    },
+    {
+      "id": 5,
+      "titulo": "Pizza",
+      "valor": 19.2,
+      "foto": "assets/pizzas/logo_categoria.jpg",
+      "descricao": "A maior pizza",
+      "categoria": "1"
+    },
+    {
+      "id": 1,
+      "titulo": "Lanche",
+      "valor": 99.2,
+      "foto": "assets/Hamburgueres/ham_logo.jpg",
+      "descricao": "Pão brioche, maionese temperada, 2 hamburgueres de 120g cada, queijo cheddar, fatias de bacon crocantes, alface americano e cebola caramelizada.",
+      "categoria": "2"
     }
   ],
   "categoria": [
     {
       "id": 1,
       "titulo": "Pizza",
-      "foto": "assets/pizzas/logo_categoria.jpg",
-      "routerLink": "pizzas"
+      "foto": "assets/pizzas/logo_categoria.jpg"
     },
     {
       "id": 2,
       "titulo": "Hamburguer",
-      "foto": "assets/pizzas/logo_categoria.jpg",
-      "routerLink": "hamburgueres"
+      "foto": "assets/Hamburgueres/ham_logo.jpg"
     },
     {
       "id": 3,
       "titulo": "Fritas",
-      "foto": "assets/pizzas/logo_categoria.jpg",
-      "routerLink": "fritas"
+      "foto": "assets/Fritas/batata_logo.jpg"
     },
+
     {
       "id": 4,
       "titulo": "Bebida",
-      "foto": "assets/pizzas/logo_categoria.jpg",
-      "routerLink": "bebidas"
+      "foto": "assets/Bebidas/logo.png"
     }
   ]
 }

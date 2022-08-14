@@ -1,8 +1,9 @@
 import { environment } from 'src/environments/environment';
-import { Categorias } from './../model/Categoria';
-import { Observable } from 'rxjs';
+import { Categoria, Categorias } from './../model/Categoria';
+import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Produto } from '../model/Produto';
 
 @Injectable({
   providedIn: 'root',
@@ -14,5 +15,9 @@ export class CategoriasService {
 
   getCategorias(): Observable<Categorias> {
     return this.httpClient.get<Categorias>(`${this.API}/categoria`);
+  }
+
+  getCategoriasPorID(categoriaId: number): Observable<Categoria>{
+    return this.httpClient.get<Categoria>(`${this.API}/categoria=${categoriaId}`)
   }
 }

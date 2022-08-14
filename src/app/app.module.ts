@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { CategoriasComponent } from './components/cardapio/categorias/categorias.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],

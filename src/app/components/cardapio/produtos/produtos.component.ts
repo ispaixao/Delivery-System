@@ -1,13 +1,8 @@
-import { map, tap } from 'rxjs';
-import { Categoria } from 'src/app/core/model/Categoria';
-import { CardProduto, CardProdutos } from './../../../core/model/CardProduto';
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Produto } from 'src/app/core/model/Produto';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Produto, Produtos } from 'src/app/core/model/Produto';
 import { ProdutosService } from 'src/app/core/services/produtos.service';
-import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-transforms';
-import { Title } from '@angular/platform-browser';
-import { MAT_TOOLTIP_DEFAULT_OPTIONS } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-produtos',
@@ -15,36 +10,26 @@ import { MAT_TOOLTIP_DEFAULT_OPTIONS } from '@angular/material/tooltip';
   styleUrls: ['./produtos.component.css'],
 })
 export class ProdutosComponent implements OnInit {
-  cardProdutos!: CardProdutos;
-  produto$!: Produto[];
-
+  cardProdutos!: Produtos;
+  produto!: Produto;
 
   constructor(
     private router: Router,
-    private produtoService: ProdutosService
+    private produtoService: ProdutosService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.getProdutosCategoria(3);
+    this.getProdutosPorId();
   }
 
-  getProdutosCategoria(categoria: number): void {
-    this.produtoService
-      .getProdutoPorCategoria(categoria)
-      .subscribe((categoria) => (this.cardProdutos = categoria));
-  }
+  getProdutosPorId(): void {
+    const paramId = this.route.snapshot.paramMap.get('id');
 
-
-
-  getProdutos(): void {
-    this.produtoService.getProdutos().subscribe(
-      (produtos) => {
-        this.cardProdutos = produtos;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    const id = Number(paramId);
+    this.produtoService.getProdutoPorCategoria(id).subscribe((produto) => {
+      this.cardProdutos = produto;
+    });
   }
 
   voltar(): void {

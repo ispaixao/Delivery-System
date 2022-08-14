@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '', component: CardapioComponent
   },
   {
-    path: ':categoria', component: ProdutosComponent
+    path: ':id', component: ProdutosComponent
   },
 
 ];

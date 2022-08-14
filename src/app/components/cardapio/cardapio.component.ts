@@ -1,8 +1,10 @@
+import { Observable } from 'rxjs';
 import { ProdutosService } from 'src/app/core/services/produtos.service';
 import { Router } from '@angular/router';
 import { CategoriasService } from './../../core/services/categorias.service';
 import { Categoria, Categorias } from './../../core/model/Categoria';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Produto, Produtos } from 'src/app/core/model/Produto';
 
 @Component({
   selector: 'app-cardapio',
@@ -10,19 +12,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./cardapio.component.css'],
 })
 export class CardapioComponent implements OnInit {
-  card!: Categorias;
+  constructor() {}
 
-  constructor(
-    private categoriaService: CategoriasService,
-  ) {}
-
-  ngOnInit(): void {
-    this.getCategorias();
-  }
-
-  getCategorias(): void {
-    this.categoriaService.getCategorias().subscribe((categorias) => {
-      this.card = categorias;
-    });
-  }
+  ngOnInit(): void {}
 }

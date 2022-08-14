@@ -7,6 +7,7 @@ import { CardapioComponent } from './cardapio.component';
 import { CardapioRoutingModule } from './cardapio-routing.module';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CardProdutoComponent } from '../card-produto/card-produto.component';
+import { CategoriasComponent } from './categorias/categorias.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CardProdutoComponent } from '../card-produto/card-produto.component';
     CardCategoriaComponent,
     ProdutosComponent,
     CardProdutoComponent,
+    CategoriasComponent
   ],
   imports: [
     CommonModule,

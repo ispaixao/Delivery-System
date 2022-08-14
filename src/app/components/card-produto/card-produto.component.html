@@ -1,16 +1,30 @@
-<mat-card
-  class="card"
-  fxLayout="column"
-  fxLayoutAlign="start center"
-  class="card"
-  *ngFor="let card of cardProdutos"
+<h3 class="text-center m-3" *ngIf="!cardProdutos.length">
+  Não há produtos cadastrados nessa categoria.
+</h3>
+
+<div
+  fxLayout="row"
+  fxLayoutGap="10px"
+  fxLayout.xs="column"
+  fxLayoutAlign="center center"
 >
-  <mat-card-header>
-    <mat-card-title>{{ card.titulo }}</mat-card-title>
-    <mat-card-subtitle>R$ {{ card.valor }}</mat-card-subtitle>
-  </mat-card-header>
-  <img matCardImage src="{{ card.foto }}" />
-  <mat-card-content> {{ card.descricao }} </mat-card-content>
-  <button mat-button>ADICIONAR AO CARRINHO</button>
-  <button mat-button>COMPRAR</button>
-</mat-card>
+  <div
+    class="card m-3"
+    style="width: 18rem; padding: 10px"
+    *ngFor="let card of cardProdutos"
+  >
+    <img
+      src="{{ card.foto }}"
+      class="card-img-top"
+      style="height: 200px; border-radius: 10px"
+      alt="{{ card.titulo }}"
+    />
+    <div class="card-body text-center">
+      <h5 class="card-title">{{ card.titulo }}</h5>
+      <p class="card-subtitle">{{ card.descricao }}</p>
+
+      <p class="card-text">R$ {{card.valor}}</p>
+      <a class="btn" routerLink="{{ card.id }}">SELECIONAR</a>
+    </div>
+  </div>
+</div>

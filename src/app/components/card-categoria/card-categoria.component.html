@@ -1,13 +1,24 @@
-<mat-card
-  class="card"
-  fxLayout="column"
-  fxLayoutAlign="start center"
-  [routerLink]="card.routerLink"
-  *ngFor="let card of cardCategoria"
-
-
-
+<div
+  fxLayout="row"
+  fxLayoutGap="10px"
+  fxLayout.xs="column"
+  fxLayoutAlign="center center"
 >
-    <h3>{{card.titulo}}</h3>
-  <img matCardImage src="{{ card.foto }}" />
-</mat-card>
+  <div
+    class="card"
+    style="width: 18rem; padding: 10px"
+    *ngFor="let categoria of cards"
+  >
+    <img
+      src="{{ categoria.foto }}"
+      class="card-img-top"
+      style="height: 200px; border-radius: 10px"
+      alt="{{ categoria.titulo }}"
+    />
+    <div class="card-body text-center">
+      <h5 class="card-title">{{ categoria.titulo }}</h5>
+      <p class="card-text"></p>
+      <a class="btn" routerLink="{{ categoria.id }}">SELECIONAR</a>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,9 @@
-import { CardProduto } from 'src/app/core/model/CardProduto';
-import { CardapioComponent } from './../../components/cardapio/cardapio.component';
-import { Categoria } from './../model/Categoria';
-import { CardProdutos } from './../model/CardProduto';
+import { Categoria } from 'src/app/core/model/Categoria';
+import { CategoriasService } from './categorias.service';
+import { Produtos } from './../model/Produto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Produto } from '../model/Produto';
 
@@ -14,15 +13,17 @@ import { Produto } from '../model/Produto';
 export class ProdutosService {
   private API = environment.API;
 
-  constructor(private httpclient: HttpClient) {}
+  constructor(
+    private httpclient: HttpClient,
+  ) {}
 
-  getProdutos(): Observable<CardProdutos> {
-    return this.httpclient.get<CardProdutos>(`${this.API}/produtos`).pipe();
+  getProdutos(): Observable<Produtos> {
+    return this.httpclient.get<Produtos>(`${this.API}/produtos`).pipe();
   }
 
-  getProdutoPorCategoria(categoria: number): Observable<CardProdutos> {
-    return this.httpclient.get<CardProdutos>(
-      `${this.API}/produtos/?categoria=${categoria}`
+  getProdutoPorCategoria(id: number): Observable<Produtos> {
+    return this.httpclient.get<Produtos>(
+      `${this.API}/produtos/?categoria=${id}`
     );
   }
 }

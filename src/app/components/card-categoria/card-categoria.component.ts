@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Categoria, Categorias } from 'src/app/core/model/Categoria';
 
 @Component({
@@ -8,8 +9,7 @@ import { Categoria, Categorias } from 'src/app/core/model/Categoria';
 })
 export class CardCategoriaComponent implements OnInit {
 
-  @Input() cardCategoria!: Categorias;
-
+  @Input() cards!: Categorias;
   constructor() { }
 
   ngOnInit(): void {

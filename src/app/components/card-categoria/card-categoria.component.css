@@ -1,16 +1,9 @@
-.card{
-  cursor: pointer;
-  padding: 30px;
-  max-width: 300px;
+.btn{
+  background-color: bisque;
 }
 
-img{
-  border-radius: 10px;
-  width: 200px;
-  height: 133px;
-}
 
-.card:hover{
+.btn:hover {
   transition: 1s;
   background-color: coral;
 }
