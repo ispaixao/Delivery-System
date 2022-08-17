@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardapioModule } from './components/cardapio/cardapio.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
@@ -10,8 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
-import { CategoriasComponent } from './components/cardapio/categorias/categorias.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
@@ -23,8 +23,7 @@ import { CategoriasComponent } from './components/cardapio/categorias/categorias
     HttpClientModule,
     CoreModule,
     FlexLayoutModule,
-    CardapioModule
-
+    CardapioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

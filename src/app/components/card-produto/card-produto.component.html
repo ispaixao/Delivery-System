@@ -1,30 +1,33 @@
 <h3 class="text-center m-3" *ngIf="!cardProdutos.length">
   Não há produtos cadastrados nessa categoria.
 </h3>
+<div fxLayout.xs="column" fxLayoutAlign="center center">
+  <div class="card m-3" *ngFor="let card of cardProdutos">
+    <div>
+      <img
+        src="{{ card.foto }}"
+        class="card-img-top"
+        style="border-radius: 10px; padding: 10px"
+        alt="{{ card.titulo }}"
+      />
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ card.titulo }}</h5>
+        <p class="card-subtitle">{{ card.descricao }}</p>
 
-<div
-  fxLayout="row"
-  fxLayoutGap="10px"
-  fxLayout.xs="column"
-  fxLayoutAlign="center center"
->
-  <div
-    class="card m-3"
-    style="width: 18rem; padding: 10px"
-    *ngFor="let card of cardProdutos"
-  >
-    <img
-      src="{{ card.foto }}"
-      class="card-img-top"
-      style="height: 200px; border-radius: 10px"
-      alt="{{ card.titulo }}"
-    />
-    <div class="card-body text-center">
-      <h5 class="card-title">{{ card.titulo }}</h5>
-      <p class="card-subtitle">{{ card.descricao }}</p>
-
-      <p class="card-text">R$ {{card.valor}}</p>
-      <a class="btn" routerLink="{{ card.id }}">SELECIONAR</a>
+        <p class="card-text">R$ {{ card.valor }}</p>
+        <a
+          class="btn mb-2"
+          [routerLink]="['/categoria', card.id]"
+          queryParamsHandling="merge"
+          >ADICIONAR AO CARRINHO</a
+        >
+        <a
+          class="btn"
+          [routerLink]="['/categoria', card.id]"
+          queryParamsHandling="merge"
+          >COMPRAR</a
+        >
+      </div>
     </div>
   </div>
 </div>

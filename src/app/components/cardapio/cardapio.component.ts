@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { ProdutosService } from 'src/app/core/services/produtos.service';
 import { Router } from '@angular/router';
-import { CategoriasService } from './../../core/services/categorias.service';
+import { CategoriasService } from '../../core/services/categorias.service';
 import { Categoria, Categorias } from './../../core/model/Categoria';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Produto, Produtos } from 'src/app/core/model/Produto';

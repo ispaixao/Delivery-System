@@ -1,5 +1,5 @@
 import { environment } from 'src/environments/environment';
-import { Categoria, Categorias } from './../model/Categoria';
+import { Categoria, Categorias } from '../model/Categoria';
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';

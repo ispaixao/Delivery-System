@@ -7,6 +7,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
+
+
 
 const MODULES = [
   MatIconModule,
@@ -16,6 +24,12 @@ const MODULES = [
   MatListModule,
   MatTooltipModule,
   MatMenuModule,
+  MatExpansionModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatCheckboxModule,
+
+
 ];
 
 @NgModule({

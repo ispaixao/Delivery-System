@@ -9,19 +9,23 @@ import { ProdutosComponent } from './produtos/produtos.component';
 import { CardProdutoComponent } from '../card-produto/card-produto.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     CardapioComponent,
     CardCategoriaComponent,
-    ProdutosComponent,
+    CategoriasComponent,
     CardProdutoComponent,
-    CategoriasComponent
+    ProdutosComponent,
   ],
   imports: [
     CommonModule,
     CardapioRoutingModule,
     AngularMaterialModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class CardapioModule {}

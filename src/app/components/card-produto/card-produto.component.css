@@ -1,6 +1,13 @@
-.btn{
+.card {
+  max-width: 300px;
+
+}
+
+
+.btn {
   background-color: bisque;
 }
+
 
 
 .btn:hover {

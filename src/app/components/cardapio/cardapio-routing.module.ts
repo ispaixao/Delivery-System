@@ -4,14 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProdutosComponent } from './produtos/produtos.component';
 
 const routes: Routes = [
-
   {
-    path: '', component: CardapioComponent
+    path: '',
+    component: CardapioComponent,
   },
   {
-    path: ':id', component: ProdutosComponent
+    path: ':categoria',
+    component: ProdutosComponent,
   },
-
 ];
 
 @NgModule({

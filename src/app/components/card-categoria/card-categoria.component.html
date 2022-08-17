@@ -18,7 +18,12 @@
     <div class="card-body text-center">
       <h5 class="card-title">{{ categoria.titulo }}</h5>
       <p class="card-text"></p>
-      <a class="btn" routerLink="{{ categoria.id }}">SELECIONAR</a>
+      <a
+        class="btn"
+        [routerLink]="['/categoria']"
+        [queryParams]="{ titulo: categoria.titulo }"
+        >SELECIONAR</a
+      >
     </div>
   </div>
 </div>

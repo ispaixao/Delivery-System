@@ -15,11 +15,11 @@ const routes: Routes = [
       import('./components/cardapio/cardapio.module').then(
         (m) => m.CardapioModule
       ),
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
