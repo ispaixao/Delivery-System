@@ -7,14 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-
-
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const MODULES = [
   MatIconModule,
@@ -28,8 +27,8 @@ const MODULES = [
   MatDialogModule,
   MatFormFieldModule,
   MatCheckboxModule,
-
-
+  MatBadgeModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({
@@ -37,4 +36,4 @@ const MODULES = [
   imports: [CommonModule, MODULES],
   exports: [MODULES],
 })
-export class AngularMaterialModule { }
+export class AngularMaterialModule {}

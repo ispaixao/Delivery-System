@@ -1,3 +1,4 @@
+import { Produto } from 'src/app/core/model/Produto';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -7,7 +8,14 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private dialog: MatDialog) {}
+  constructor() {}
+
+  produto!: Produto
 
   ngOnInit(): void {}
+
+
+  
+
+
 }

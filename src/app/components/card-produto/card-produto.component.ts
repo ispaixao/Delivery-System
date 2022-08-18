@@ -32,7 +32,7 @@ export class CardProdutoComponent implements OnInit {
 
     dialogDataRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.router.navigate(['']);
+        this.router.navigate(['/carrinho']);
       }
     });
   }

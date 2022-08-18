@@ -10,6 +10,7 @@ import { CardProdutoComponent } from '../card-produto/card-produto.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarrinhoComponent } from './produtos/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CategoriasComponent,
     CardProdutoComponent,
     ProdutosComponent,
+    CarrinhoComponent,
   ],
   imports: [
     CommonModule,
