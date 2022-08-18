@@ -15,10 +15,7 @@
         <p class="card-subtitle">{{ card.descricao }}</p>
 
         <p class="card-text">R$ {{ card.valor }}</p>
-        <a
-          class="btn mb-2"
-          [routerLink]="['/categoria', card.id]"
-          queryParamsHandling="merge"
+        <a class="btn mb-2" (click)="adicionarCarrinho()"
           >ADICIONAR AO CARRINHO</a
         >
         <a

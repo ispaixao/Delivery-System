@@ -5,8 +5,9 @@ import { AngularMaterialModule } from './Material/angular-material/angular-mater
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DialogComponent } from './components/dialog/dialog.component';
 
-const COMPONENTS = [FooterComponent, HeaderComponent];
+const COMPONENTS = [FooterComponent, HeaderComponent, DialogComponent];
 
 const MODULES = [AngularMaterialModule, RouterModule, FlexLayoutModule];
 
