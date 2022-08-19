@@ -1,6 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto, Produtos } from 'src/app/core/model/Produto';
 import { ProdutosService } from 'src/app/core/services/produtos.service';
@@ -11,7 +9,7 @@ import { ProdutosService } from 'src/app/core/services/produtos.service';
   styleUrls: ['./produtos.component.css'],
 })
 export class ProdutosComponent implements OnInit {
-  cardProdutos!: Produtos;
+  produtos!: Produtos;
 
   constructor(
     private router: Router,
@@ -20,16 +18,16 @@ export class ProdutosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getProdutosPorId();
+    this.getProdutos();
   }
 
-  getProdutosPorId(): void {
+  getProdutos(): void {
     const paramId = this.route.snapshot.queryParams['titulo'];
     console.log(paramId);
     const param = paramId || '';
 
-    this.produtoService.getProdutoPorCategoria(param).subscribe((produto) => {
-      this.cardProdutos = produto;
+    this.produtoService.getProdutos(param).subscribe((produto) => {
+      this.produtos = produto;
     });
   }
 

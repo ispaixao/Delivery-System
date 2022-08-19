@@ -15,22 +15,21 @@ export class ProdutosService {
 
   constructor(private httpclient: HttpClient) {}
 
-  getProdutos(): Observable<Produtos> {
-    return this.httpclient.get<Produtos>(`${this.API}/produtos`).pipe();
-  }
-
-  // GET SERÁ PELO NOME DA CATEGORIA.
-
-  getProdutoPorCategoria(categoria: string): Observable<Produtos> {
+  getProdutos(categoria: string): Observable<Produtos> {
     return this.httpclient.get<Produtos>(
       `${this.API}/produtos/?categoria=${categoria}`
     );
   }
 
-  getProdutoSelecionado(id: number): Observable<Produto>{
+  // GET SERÁ PELO NOME DA CATEGORIA.
+
+  getProdutoPorCategoria(categoria: string): Observable<Produto> {
     return this.httpclient.get<Produto>(
-      `${this.API}/produtos?id=${id}`
+      `${this.API}/produtos/?categoria=${categoria}`
     );
   }
 
+  getProdutoSelecionado(id: number): Observable<Produto> {
+    return this.httpclient.get<Produto>(`${this.API}/produtos?id=${id}`);
+  }
 }

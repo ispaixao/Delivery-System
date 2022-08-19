@@ -11,7 +11,6 @@ import { Produtos } from 'src/app/core/model/Produto';
 })
 export class CategoriasComponent implements OnInit {
   categoria!: Categorias;
-  produtos!: Produtos;
 
   constructor(
     private categoriaService: CategoriasService,

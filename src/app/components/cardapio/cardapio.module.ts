@@ -1,4 +1,4 @@
-import { CardCategoriaComponent } from './../card-categoria/card-categoria.component';
+import { CardCategoriaComponent } from '../cards/card-categoria/card-categoria.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularMaterialModule } from './../../core/Material/angular-material/angular-material.module';
 import { NgModule } from '@angular/core';
@@ -6,11 +6,10 @@ import { CommonModule } from '@angular/common';
 import { CardapioComponent } from './cardapio.component';
 import { CardapioRoutingModule } from './cardapio-routing.module';
 import { ProdutosComponent } from './produtos/produtos.component';
-import { CardProdutoComponent } from '../card-produto/card-produto.component';
+import { CardProdutoComponent } from '../cards/card-produto/card-produto.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CarrinhoComponent } from './produtos/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { CarrinhoComponent } from './produtos/carrinho/carrinho.component';
     CategoriasComponent,
     CardProdutoComponent,
     ProdutosComponent,
-    CarrinhoComponent,
   ],
   imports: [
     CommonModule,

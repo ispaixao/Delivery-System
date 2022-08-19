@@ -4,7 +4,6 @@ export interface Produto {
   valor: number;
   descricao: string;
   foto: string;
-  routerLink: string;
   categoria: number
 }
 

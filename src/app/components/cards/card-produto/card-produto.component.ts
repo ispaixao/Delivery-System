@@ -1,6 +1,5 @@
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, Input, OnInit } from '@angular/core';
-import { Produtos } from 'src/app/core/model/Produto';
+import { Produto, Produtos } from 'src/app/core/model/Produto';
 import { MatDialog } from '@angular/material/dialog';
 import { Dialog } from 'src/app/core/model/Dialog';
 import { DialogComponent } from 'src/app/core/components/dialog/dialog.component';
@@ -12,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./card-produto.component.css'],
 })
 export class CardProdutoComponent implements OnInit {
-  @Input() cardProdutos!: Produtos;
+  @Input() produtos!: Produtos;
 
   constructor(private dialog: MatDialog, private router: Router) {}
 

@@ -1,0 +1,26 @@
+<h3 class="text-center m-3" *ngIf="!produtos">
+  Não há produtos cadastrados nessa categoria.
+</h3>
+
+<ul class="text-center" fxLayout.sm="row">
+  <li class="d-inline-block card m-3" *ngFor="let produto of produtos">
+    <img
+      src="{{ produto.foto }}"
+      class="card-img-top"
+      style="border-radius: 10px; padding: 10px"
+      alt="card.titulo"
+    />
+    <div class="card-body text-center">
+      <h5 class="card-title">{{ produto.titulo }}</h5>
+      <p class="card-subtitle">{{ produto.descricao }}</p>
+      <p class="card-text">R$ {{ produto.valor }}</p>
+      <a
+      class="btn"
+      [routerLink]="['/categoria', produto.id]"
+      queryParamsHandling="merge"
+      >COMPRAR</a
+
+      >
+    </div>
+  </li>
+</ul>

@@ -1,4 +1,3 @@
-import { CarrinhoComponent } from './produtos/carrinho/carrinho.component';
 import { CardapioComponent } from './cardapio.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
