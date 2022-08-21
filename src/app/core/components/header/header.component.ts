@@ -1,3 +1,4 @@
+import { CarrinhoService } from './../../services/carrinho/carrinho.service';
 import { Produto } from 'src/app/core/model/Produto';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -8,14 +9,15 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  totalItens!: number;
+  constructor(private carrinhoService: CarrinhoService) {}
+  ngOnInit(): void {
+    this.getCarrinho();
+  }
 
-  produto!: Produto
-
-  ngOnInit(): void {}
-
-
-  
-
-
+  getCarrinho() {
+    this.carrinhoService.getProdutos().subscribe((res) => {
+      this.totalItens = res.length;
+    });
+  }
 }

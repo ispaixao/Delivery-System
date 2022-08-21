@@ -1,10 +1,11 @@
+import { CarrinhoService } from './../../../core/services/carrinho/carrinho.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Produto, Produtos } from 'src/app/core/model/Produto';
 import { MatDialog } from '@angular/material/dialog';
 import { Dialog } from 'src/app/core/model/Dialog';
 import { DialogComponent } from 'src/app/core/components/dialog/dialog.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProdutosService } from 'src/app/core/services/produtos.service';
+import { ProdutosService } from 'src/app/core/services/produto/produtos.service';
 
 @Component({
   selector: 'app-produtos',
@@ -12,13 +13,15 @@ import { ProdutosService } from 'src/app/core/services/produtos.service';
   styleUrls: ['./produtos.component.css'],
 })
 export class ProdutosComponent implements OnInit {
-   produtos!: Produtos;
+  produtos!: Produtos;
+  produto: any;
 
   constructor(
     private dialog: MatDialog,
     private router: Router,
+    private route: ActivatedRoute,
     private produtoService: ProdutosService,
-    private route: ActivatedRoute
+    private carrinhoService: CarrinhoService
   ) {}
 
   ngOnInit(): void {
@@ -53,8 +56,16 @@ export class ProdutosComponent implements OnInit {
 
     dialogDataRef.afterClosed().subscribe((result) => {
       if (result) {
+        // this.addCarrinho();
         this.router.navigate(['/carrinho']);
       }
     });
+  }
+
+  addCarrinho(produto: any) {
+    this.produtos.forEach((p) => {
+      Object.assign(p, {quantidade: 1, total: p.valor})
+    })
+    this.carrinhoService.adicionarCarrinho(produto);
   }
 }

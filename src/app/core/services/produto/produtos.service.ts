@@ -1,11 +1,11 @@
 import { Categoria } from 'src/app/core/model/Categoria';
-import { CategoriasService } from './categorias.service';
-import { Produtos } from '../model/Produto';
+import { CategoriasService } from '../categoria/categorias.service';
+import { Produtos } from '../../model/Produto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Produto } from '../model/Produto';
+import { Produto } from '../../model/Produto';
 
 @Injectable({
   providedIn: 'root',

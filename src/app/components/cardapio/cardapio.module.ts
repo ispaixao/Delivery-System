@@ -10,12 +10,9 @@ import { CategoriasComponent } from './categorias/categorias.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
-  declarations: [
-    CardapioComponent,
-    CategoriasComponent,
-    ProdutosComponent
-  ],
+  declarations: [CardapioComponent, CategoriasComponent, ProdutosComponent],
   imports: [
     CommonModule,
     CardapioRoutingModule,

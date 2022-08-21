@@ -1,0 +1,47 @@
+<h4 class="text-center m-3">Carrinho</h4>
+
+<ng-container *ngIf="true">
+  <div class="container">
+    <div class="table">
+      <div class="produtos">
+        <table class="table table-resposive">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Imagem</th>
+              <th>Produto</th>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Quantidade</th>
+              <th>Valor total</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>FOTO</td>
+              <td>Pizza</td>
+              <td>Pizza de mussarela com tomates</td>
+              <td>R$ 99,99</td>
+              <td>3</td>
+              <td>R$299,00</td>
+              <td>
+                <button mat-icon-button><mat-icon>delete</mat-icon></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="false">
+  <div class="container text-center">
+    <h5>Seu carrinho está vázio.</h5>
+    <button class="btn btn-info" routerLink="/cardapio">
+      IR PARA PRODUTOS
+    </button>
+  </div>
+</ng-container>

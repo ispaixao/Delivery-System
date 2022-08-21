@@ -8,7 +8,13 @@
   />
 
   <button class="ml-auto" [routerLink]="['carrinho']" mat-icon-button>
-    <mat-icon matTooltip="Carrinho">shopping_cart</mat-icon>
+    <mat-icon
+      matBadge="{{ totalItens }}"
+      matBadgeSize="small"
+      matBadgePosition="after"
+      matTooltip="Carrinho"
+      >shopping_cart</mat-icon
+    >
   </button>
   <button mat-icon-button>
     <mat-icon matTooltip="Entrar">account_circle</mat-icon>

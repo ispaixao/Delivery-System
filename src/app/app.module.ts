@@ -1,3 +1,4 @@
+import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardapioModule } from './components/cardapio/cardapio.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -12,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, CarrinhoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

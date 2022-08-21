@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Categoria, Categorias } from 'src/app/core/model/Categoria';
-import { CategoriasService } from 'src/app/core/services/categorias.service';
+import { CategoriasService } from 'src/app/core/services/categoria/categorias.service';
 
 @Component({
   selector: 'app-categorias',

@@ -10,11 +10,8 @@
         <h5 class="card-title">{{ produto.titulo }}</h5>
         <p class="card-subtitle">{{ produto.descricao }}</p>
         <p class="card-text">R$ {{ produto.valor }}</p>
-        <a
-          class="btn"
-          queryParamsHandling="merge"
-          >COMPRAR</a
-        >
+        <a class="btn" queryParamsHandling="merge" (click)="addCarrinho(produto)">ADICIONAR AO CARRINHO</a>
+        <a class="btn" queryParamsHandling="merge">COMPRAR</a>
       </div>
     </ng-container>
   </div>
