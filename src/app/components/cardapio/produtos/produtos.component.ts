@@ -1,6 +1,9 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { Produto, Produtos } from 'src/app/core/model/Produto';
+import { MatDialog } from '@angular/material/dialog';
+import { Dialog } from 'src/app/core/model/Dialog';
+import { DialogComponent } from 'src/app/core/components/dialog/dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutosService } from 'src/app/core/services/produtos.service';
 
 @Component({
@@ -9,9 +12,10 @@ import { ProdutosService } from 'src/app/core/services/produtos.service';
   styleUrls: ['./produtos.component.css'],
 })
 export class ProdutosComponent implements OnInit {
-  produtos!: Produtos;
+   produtos!: Produtos;
 
   constructor(
+    private dialog: MatDialog,
     private router: Router,
     private produtoService: ProdutosService,
     private route: ActivatedRoute
@@ -33,5 +37,24 @@ export class ProdutosComponent implements OnInit {
 
   voltar(): void {
     this.router.navigate(['/cardapio']);
+  }
+
+  adicionarCarrinho(): void {
+    const dialogData: Dialog = {
+      cancelar: '',
+      confirmar: '',
+      conteudo: 'Deseja ir para o carrinho?',
+    };
+
+    const dialogDataRef = this.dialog.open(DialogComponent, {
+      data: dialogData,
+      width: '300px',
+    });
+
+    dialogDataRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.router.navigate(['/carrinho']);
+      }
+    });
   }
 }

@@ -1,7 +1,29 @@
-button {
-  background-color: #CECECE;
-  margin: 10px;
-  position: relative;
-
+.row {
+  justify-content: space-around;
 }
 
+
+.card {
+  margin: 10px;
+  padding: 10px;
+}
+
+.card img {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: bisque;
+  transition: 0.3s ease-in-out;
+}
+
+
+
+.btn:hover {
+  transition: 1s;
+  background-color: coral;
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}

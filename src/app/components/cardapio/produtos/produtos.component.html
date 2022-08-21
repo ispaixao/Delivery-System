@@ -1,9 +1,21 @@
-<div>
-  <button mat-icon-button (click)="voltar()">
-    <mat-icon class>arrow_back</mat-icon>
-  </button>
-</div>
+<h3 class="text-center m-3" *ngIf="!produtos">
+  Não há produtos cadastrados nessa categoria.
+</h3>
 
-<app-card-produto
-  [produtos]="produtos"
-></app-card-produto>
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let produto of produtos">
+      <div class="card col-md-3 text-center">
+        <img src="{{ produto.foto }}" class="card-img-top" alt="card.titulo" />
+        <h5 class="card-title">{{ produto.titulo }}</h5>
+        <p class="card-subtitle">{{ produto.descricao }}</p>
+        <p class="card-text">R$ {{ produto.valor }}</p>
+        <a
+          class="btn"
+          queryParamsHandling="merge"
+          >COMPRAR</a
+        >
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,12 +1,11 @@
-import { CardCategoriaComponent } from '../cards/card-categoria/card-categoria.component';
+import { ProdutosComponent } from './produtos/produtos.component';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularMaterialModule } from './../../core/Material/angular-material/angular-material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardapioComponent } from './cardapio.component';
 import { CardapioRoutingModule } from './cardapio-routing.module';
-import { ProdutosComponent } from './produtos/produtos.component';
-import { CardProdutoComponent } from '../cards/card-produto/card-produto.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,10 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     CardapioComponent,
-    CardCategoriaComponent,
     CategoriasComponent,
-    CardProdutoComponent,
-    ProdutosComponent,
+    ProdutosComponent
   ],
   imports: [
     CommonModule,

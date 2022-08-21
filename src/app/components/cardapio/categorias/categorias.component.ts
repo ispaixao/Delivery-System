@@ -1,8 +1,7 @@
-import { ProdutosService } from 'src/app/core/services/produtos.service';
-import { Component, OnInit } from '@angular/core';
-import { Categorias } from 'src/app/core/model/Categoria';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Categoria, Categorias } from 'src/app/core/model/Categoria';
 import { CategoriasService } from 'src/app/core/services/categorias.service';
-import { Produtos } from 'src/app/core/model/Produto';
 
 @Component({
   selector: 'app-categorias',
@@ -10,12 +9,8 @@ import { Produtos } from 'src/app/core/model/Produto';
   styleUrls: ['./categorias.component.css'],
 })
 export class CategoriasComponent implements OnInit {
-  categoria!: Categorias;
-
-  constructor(
-    private categoriaService: CategoriasService,
-    private produtoService: ProdutosService
-  ) {}
+  categorias!: Categorias;
+  constructor(private categoriaService: CategoriasService) {}
 
   ngOnInit(): void {
     this.getCategorias();
@@ -23,7 +18,7 @@ export class CategoriasComponent implements OnInit {
 
   getCategorias(): void {
     this.categoriaService.getCategorias().subscribe((categorias) => {
-      this.categoria = categorias;
+      this.categorias = categorias;
     });
   }
 }

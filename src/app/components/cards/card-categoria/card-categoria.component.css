@@ -1,9 +1,0 @@
-.btn{
-  background-color: bisque;
-}
-
-
-.btn:hover {
-  transition: 1s;
-  background-color: coral;
-}
