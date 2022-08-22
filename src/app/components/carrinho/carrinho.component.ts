@@ -25,12 +25,6 @@ export class CarrinhoComponent implements OnInit {
     });
   }
 
-  diminuirQuantidade() {
-    this.produtos.forEach((p) => {
-      p.quantidade--;
-    });
-  }
-
   removerItem(item: Produto): void {
     this.carrinhoService.removerItem(item);
   }

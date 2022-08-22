@@ -1,65 +1,65 @@
-<h4 class="text-center m-3">Carrinho</h4>
-
 <ng-container *ngIf="produtos.length != 0">
   <div class="container">
-    <div class="card-table">
-      <div class="card-produtos">
-        <table class="table table-resposive">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Imagem</th>
-              <th>Produto</th>
-              <th>Descrição</th>
-              <th>Valor</th>
-              <th>Quantidade</th>
-              <th>Ação</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let produto of produtos; let i = index">
-              <td style="width: 5%">{{ i + 1 }}</td>
-              <td style="width: 10%">
-                <img
-                  src="{{ produto.foto }}"
-                  style="width: 100px; border-radius: 10px"
-                  alt="{{ produto.titulo }}"
-                />
-              </td>
-              <td style="width: 10%">{{ produto.titulo }}</td>
-              <td style="width: 10%">{{ produto.descricao }}</td>
-              <td style="width: 10%">R$ {{ produto.valor }}</td>
-              <td style="width: 15%">{{ produto.quantidade }}</td>
-
-              <td>
-                <button mat-icon-button (click)="removerItem(produto)">
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="4"></td>
-              <td>
-                <button mat-icon-button (click)="removerTodos()">
-                  <mat-icon>delete_forever</mat-icon>
-                </button>
-              </td>
-              <td>FINALIZAR</td>
-              <td>IR PARA PRODUTOS</td>
-              <td>
-                <strong>Valor total: R$ {{ valorTotal }}</strong>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h3 class="text-center m-3">Carrinho de compras</h3>
+    <hr />
+    <ul class="list-group mb-3">
+      <li
+        class="list-group-item py-3"
+        *ngFor="let produto of produtos; let i = index"
+      >
+        <div class="row g-4">
+          <div class="col-4 col-md-3 col-lg-2">
+            <img
+              style="width: 150px; border-radius: 10px"
+              src="{{ produto.foto }}"
+              alt="{{ produto.titulo }}"
+            />
+          </div>
+          <div class="col-8 col-md-9 col-lg-7 col-xl-8 align-self-center">
+            <h4 class="text-decoration-none text-danger text-center">
+              <b>{{ produto.titulo }}</b>
+            </h4>
+            <p class="text-right">
+              <small>{{ produto.descricao }}</small>
+            </p>
+            <div class="mt-2 text-right">
+              <small class="text-secondary"
+                >Preço: R$ {{ produto.valor }}</small
+              >
+            </div>
+            <button
+              (click)="removerItem(produto)"
+              class="text-right"
+              mat-icon-button
+              matTooltip="Apagar do carrinho"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item py-3">
+        <div class="text-right">
+          <h6>
+            Valor total:
+            <p class="text-danger font-weight-bold">R$ {{ valorTotal }}</p>
+          </h6>
+          <button class="btn btn-primary mr-2" (click)="removerTodos()">
+            APAGAR TUDO
+          </button>
+          <button class="btn btn-primary mr-2" routerLink="/cardapio">
+            COMPRAR MAIS
+          </button>
+          <button class="btn text-dark bg-success">FINALIZAR</button>
+        </div>
+      </li>
+    </ul>
   </div>
 </ng-container>
 
 <ng-container *ngIf="produtos.length == 0">
   <div class="container text-center">
-    <h5>Seu carrinho está vázio.</h5>
+    <h5 class="m-3">Seu carrinho está vázio.</h5>
     <button class="btn btn-info" routerLink="/cardapio">
       IR PARA PRODUTOS
     </button>
