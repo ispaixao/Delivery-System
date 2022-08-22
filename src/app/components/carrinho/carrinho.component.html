@@ -1,9 +1,9 @@
 <h4 class="text-center m-3">Carrinho</h4>
 
-<ng-container *ngIf="true">
+<ng-container *ngIf="produtos.length != 0">
   <div class="container">
-    <div class="table">
-      <div class="produtos">
+    <div class="card-table">
+      <div class="card-produtos">
         <table class="table table-resposive">
           <thead>
             <tr>
@@ -13,21 +13,41 @@
               <th>Descrição</th>
               <th>Valor</th>
               <th>Quantidade</th>
-              <th>Valor total</th>
               <th>Ação</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>FOTO</td>
-              <td>Pizza</td>
-              <td>Pizza de mussarela com tomates</td>
-              <td>R$ 99,99</td>
-              <td>3</td>
-              <td>R$299,00</td>
+            <tr *ngFor="let produto of produtos; let i = index">
+              <td style="width: 5%">{{ i + 1 }}</td>
+              <td style="width: 10%">
+                <img
+                  src="{{ produto.foto }}"
+                  style="width: 100px; border-radius: 10px"
+                  alt="{{ produto.titulo }}"
+                />
+              </td>
+              <td style="width: 10%">{{ produto.titulo }}</td>
+              <td style="width: 10%">{{ produto.descricao }}</td>
+              <td style="width: 10%">R$ {{ produto.valor }}</td>
+              <td style="width: 15%">{{ produto.quantidade }}</td>
+
               <td>
-                <button mat-icon-button><mat-icon>delete</mat-icon></button>
+                <button mat-icon-button (click)="removerItem(produto)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="4"></td>
+              <td>
+                <button mat-icon-button (click)="removerTodos()">
+                  <mat-icon>delete_forever</mat-icon>
+                </button>
+              </td>
+              <td>FINALIZAR</td>
+              <td>IR PARA PRODUTOS</td>
+              <td>
+                <strong>Valor total: R$ {{ valorTotal }}</strong>
               </td>
             </tr>
           </tbody>
@@ -37,7 +57,7 @@
   </div>
 </ng-container>
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="produtos.length == 0">
   <div class="container text-center">
     <h5>Seu carrinho está vázio.</h5>
     <button class="btn btn-info" routerLink="/cardapio">

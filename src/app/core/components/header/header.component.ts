@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
   }
 
   getCarrinho() {
-    this.carrinhoService.getProdutos().subscribe((res) => {
-      this.totalItens = res.length;
+    this.carrinhoService.getProdutos().subscribe((itens) => {
+      this.totalItens = itens.length;
     });
   }
 }

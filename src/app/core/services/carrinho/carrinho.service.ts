@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Produto, Produtos } from '../../model/Produto';
@@ -6,7 +7,7 @@ import { Produto, Produtos } from '../../model/Produto';
   providedIn: 'root',
 })
 export class CarrinhoService {
-  carrinhoList: any = [];
+  carrinhoList: Produtos = [];
   produtoList = new BehaviorSubject<Produtos>([]);
 
   constructor() {}
@@ -15,31 +16,29 @@ export class CarrinhoService {
     return this.produtoList.asObservable();
   }
 
-  setProdutos(produto: any) {
-    this.carrinhoList.push(...produto);
-    this.produtoList.next(produto);
-  }
-
-  adicionarCarrinho(produto: any) {
+  adicionarCarrinho(produto: Produto) {
     this.carrinhoList.push(produto);
     this.produtoList.next(this.carrinhoList);
+
     this.valorTotal();
-    console.log(this.carrinhoList);
   }
 
-  valorTotal() {
+  valorTotal(): number {
     let valor_total = 0;
-    this.carrinhoList.map((valor: any) => {
-      valor_total += valor.total;
+    this.carrinhoList.map((produto: Produto) => {
+      valor_total += produto.valor;
     });
+
+    return valor_total;
   }
 
-  removerItem(produto: any) {
-    this.carrinhoList.map((p: any, index: any) => {
+  removerItem(produto: Produto) {
+    this.carrinhoList.map((p: Produto, index: number) => {
       if (produto.id === p.id) {
         this.carrinhoList.splice(index, 1);
       }
     });
+    this.produtoList.next(this.carrinhoList);
   }
 
   esvaziarCarrinho() {

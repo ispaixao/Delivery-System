@@ -14,7 +14,6 @@ import { ProdutosService } from 'src/app/core/services/produto/produtos.service'
 })
 export class ProdutosComponent implements OnInit {
   produtos!: Produtos;
-  produto: any;
 
   constructor(
     private dialog: MatDialog,
@@ -35,6 +34,9 @@ export class ProdutosComponent implements OnInit {
 
     this.produtoService.getProdutos(param).subscribe((produto) => {
       this.produtos = produto;
+      this.produtos.forEach((p) => {
+        Object.assign(p, { quantidade: 1, total: p.valor });
+      });
     });
   }
 
@@ -62,10 +64,7 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
-  addCarrinho(produto: any) {
-    this.produtos.forEach((p) => {
-      Object.assign(p, {quantidade: 1, total: p.valor})
-    })
+  addCarrinho(produto: Produto) {
     this.carrinhoService.adicionarCarrinho(produto);
   }
 }
