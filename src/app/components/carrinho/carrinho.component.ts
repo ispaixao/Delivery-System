@@ -9,6 +9,7 @@ import { Produto, Produtos } from 'src/app/core/model/Produto';
 })
 export class CarrinhoComponent implements OnInit {
   produtos!: Produtos;
+  valorProdutos!: number;
   valorTotal!: number;
 
   constructor(private carrinhoService: CarrinhoService) {}
@@ -22,6 +23,13 @@ export class CarrinhoComponent implements OnInit {
     this.carrinhoService.getProdutos().subscribe((produtos) => {
       this.produtos = produtos;
       this.valorTotal = this.carrinhoService.valorTotal();
+      this.valorProdutos = this.carrinhoService.valorProdutos();
+    });
+  }
+
+  ValorProdutos(): void {
+    this.produtos.forEach((p) => {
+      this.valorProdutos = p.quantidade * p.valor;
     });
   }
 

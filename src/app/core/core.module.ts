@@ -6,7 +6,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 const COMPONENTS = [FooterComponent, HeaderComponent, DialogComponent];
 

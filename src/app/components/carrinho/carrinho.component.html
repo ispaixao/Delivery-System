@@ -1,59 +1,53 @@
 <ng-container *ngIf="produtos.length != 0">
   <div class="container">
     <h3 class="text-center m-3">Carrinho de compras</h3>
-    <hr />
-    <ul class="list-group mb-3">
+
+    <ul class="list-group">
       <li
-        class="list-group-item py-3"
+        class="list-group-item col-12 col-lg-6 col-md-6 col-sm-12 mb-2"
         *ngFor="let produto of produtos; let i = index"
       >
-        <div class="row g-4">
-          <div class="col-4 col-md-3 col-lg-2">
+        <div class="row mb-2">
+          <div class="col-12 col-lg-6 text-center">
+            <h4 class="text-decoration-none text-danger">
+              <b>{{ produto.titulo }}</b>
+            </h4>
             <img
               style="width: 150px; border-radius: 10px"
               src="{{ produto.foto }}"
               alt="{{ produto.titulo }}"
             />
+            <p class="text-secondary mt-2">Preço: R$ {{ produto.valor }}</p>
           </div>
-          <div class="col-8 col-md-9 col-lg-7 col-xl-8 align-self-center">
-            <h4 class="text-decoration-none text-danger text-center">
-              <b>{{ produto.titulo }}</b>
-            </h4>
-            <p class="text-right">
+          <div class="col-12 col-lg-6">
+            <p class="text-center">
               <small>{{ produto.descricao }}</small>
             </p>
-            <div class="mt-2 text-right">
-              <small class="text-secondary"
-                >Preço: R$ {{ produto.valor }}</small
+            <div class="mt-5 text-right">
+              <button
+                (click)="removerItem(produto)"
+                class="align-items-end"
+                mat-icon-button
+                matTooltip="Apagar do carrinho"
               >
+                <mat-icon>delete</mat-icon>
+              </button>
             </div>
-            <button
-              (click)="removerItem(produto)"
-              class="text-right"
-              mat-icon-button
-              matTooltip="Apagar do carrinho"
-            >
-              <mat-icon>delete</mat-icon>
-            </button>
           </div>
-        </div>
-      </li>
-      <li class="list-group-item py-3">
-        <div class="text-right">
-          <h6>
-            Valor total:
-            <p class="text-danger font-weight-bold">R$ {{ valorTotal }}</p>
-          </h6>
-          <button class="btn btn-primary mr-2" (click)="removerTodos()">
-            APAGAR TUDO
-          </button>
-          <button class="btn btn-primary mr-2" routerLink="/cardapio">
-            COMPRAR MAIS
-          </button>
-          <button class="btn text-dark bg-success">FINALIZAR</button>
         </div>
       </li>
     </ul>
+    <div class="col-12 col-lg-12 text-right">
+      <form class="example-form">
+        <p>Sub-Total: R$ {{ valorProdutos }}</p>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Cupom de desconto</mat-label>
+          <input matInput placeholder="Digite.." />
+        </mat-form-field>
+        <p class="text-success">Desconto: R$ 0,00</p>
+        <p>Total: R$ {{valorTotal}}</p>
+      </form>
+    </div>
   </div>
 </ng-container>
 

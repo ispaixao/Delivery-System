@@ -23,6 +23,15 @@ export class CarrinhoService {
     this.valorTotal();
   }
 
+  valorProdutos(): number {
+    let valor = 0;
+    this.carrinhoList.map((produto: Produto) => {
+      valor += produto.valor;
+    });
+
+    return valor;
+  }
+
   valorTotal(): number {
     let valor_total = 0;
     this.carrinhoList.map((produto: Produto) => {
