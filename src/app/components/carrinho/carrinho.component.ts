@@ -11,6 +11,7 @@ export class CarrinhoComponent implements OnInit {
   produtos!: Produtos;
   valorProdutos!: number;
   valorTotal!: number;
+  desconto!: number;
 
   constructor(private carrinhoService: CarrinhoService) {}
 
@@ -27,10 +28,14 @@ export class CarrinhoComponent implements OnInit {
     });
   }
 
-  ValorProdutos(): void {
-    this.produtos.forEach((p) => {
-      this.valorProdutos = p.quantidade * p.valor;
-    });
+  aplicarDesconto(cupom: string): void {
+    let valor = 50.00;
+
+    if (cupom === 'PRIMEIRACOMPRA') {
+      this.desconto = valor;
+      this.valorTotal -= this.desconto;
+      this.valorTotal.toFixed(2);
+    }
   }
 
   removerItem(item: Produto): void {
