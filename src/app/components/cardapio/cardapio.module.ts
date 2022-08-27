@@ -1,3 +1,4 @@
+import { NgxBootstrapModule } from './../../core/Material/ngx-bootstrap/ngx-bootstrap.module';
 import { ProdutosComponent } from './produtos/produtos.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -10,7 +11,6 @@ import { CategoriasComponent } from './categorias/categorias.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [CardapioComponent, CategoriasComponent, ProdutosComponent],
   imports: [
@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxBootstrapModule,
   ],
 })
 export class CardapioModule {}

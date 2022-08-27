@@ -11,7 +11,9 @@ import { AngularMaterialModule } from './core/Material/angular-material/angular-
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [AppComponent, HomeComponent, CarrinhoComponent],
   imports: [
@@ -24,10 +26,10 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     FlexLayoutModule,
     CardapioModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-
 })
 export class AppModule {}

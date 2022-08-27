@@ -1,3 +1,4 @@
+import { NgxBootstrapModule } from './Material/ngx-bootstrap/ngx-bootstrap.module';
 import { RouterModule } from '@angular/router';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -5,11 +6,17 @@ import { AngularMaterialModule } from './Material/angular-material/angular-mater
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { DialogComponent } from './components/dialog/dialog.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { AlertsComponent } from '../shared/components/alerts/alerts.component';
 
-const COMPONENTS = [FooterComponent, HeaderComponent, DialogComponent];
+const COMPONENTS = [FooterComponent, HeaderComponent, ModalComponent];
 
-const MODULES = [AngularMaterialModule, RouterModule, FlexLayoutModule];
+const MODULES = [
+  AngularMaterialModule,
+  RouterModule,
+  FlexLayoutModule,
+  NgxBootstrapModule,
+];
 
 @NgModule({
   declarations: [COMPONENTS],
