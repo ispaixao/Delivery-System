@@ -1,9 +1,11 @@
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalService } from './../../../shared/services/modal/modal.service';
 import {
   AlertService,
   AlertTypes,
-} from './../../../shared/services/alert.service';
+} from '../../../shared/services/alert/alert.service';
 import { CarrinhoService } from './../../../core/services/carrinho/carrinho.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Produto, Produtos } from 'src/app/core/model/Produto';
 
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,13 +18,15 @@ import { ProdutosService } from 'src/app/core/services/produto/produtos.service'
 })
 export class ProdutosComponent implements OnInit {
   produtos!: Produtos;
+  @ViewChild('template') template;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutosService,
     private carrinhoService: CarrinhoService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private modalService: ModalService
   ) {}
 
   ngOnInit(): void {
@@ -61,5 +65,14 @@ export class ProdutosComponent implements OnInit {
       'Não foi possível carregar os produtos, tente mais tarde',
       AlertTypes.DANGER
     );
+  }
+
+  comprar(produto: Produto): void {
+    this.modalService.openModal(this.template);
+    this.addCarrinho(produto);
+  }
+
+  hide(): void {
+    this.modalService.hideModal();
   }
 }

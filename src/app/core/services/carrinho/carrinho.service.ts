@@ -37,7 +37,6 @@ export class CarrinhoService {
     this.carrinhoList.map((produto: Produto) => {
       valor_total += produto.valor;
     });
-
     return valor_total;
   }
 

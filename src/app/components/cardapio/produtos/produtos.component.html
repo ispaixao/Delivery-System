@@ -10,10 +10,17 @@
         <h5 class="card-title">{{ produto.titulo }}</h5>
         <p class="card-subtitle">{{ produto.descricao }}</p>
         <p class="card-text">R$ {{ produto.valor }}</p>
-        <a class="btn" queryParamsHandling="merge" (click)="addCarrinho(produto)">ADICIONAR AO CARRINHO</a>
-        <a class="btn" queryParamsHandling="merge">COMPRAR</a>
+        <a class="btn btn-outline-primary" queryParamsHandling="merge" (click)="addCarrinho(produto)">ADICIONAR AO CARRINHO</a>
+        <a class="btn btn-outline-primary" queryParamsHandling="merge" (click)="comprar(produto)">COMPRAR</a>
       </div>
     </ng-container>
   </div>
 </div>
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Deseja comprar algo mais?</p>
+    <button type="button" class="btn btn-primary" routerLink="/cardapio" (click)="hide()">Sim</button>
+    <button type="button" class="btn btn-default" routerLink="/carrinho" (click)="hide()" >Não</button>
+  </div>
+</ng-template>
 

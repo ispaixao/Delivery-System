@@ -1,7 +1,7 @@
 import {
   AlertService,
   AlertTypes,
-} from './../../../shared/services/alert.service';
+} from '../../../shared/services/alert/alert.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
