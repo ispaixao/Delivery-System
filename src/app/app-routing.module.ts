@@ -1,4 +1,4 @@
-import { FinalizarComponent } from './components/carrinho/finalizar/finalizar/finalizar.component';
+import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
