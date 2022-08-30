@@ -1,3 +1,4 @@
+import { FinalizarComponent } from './components/carrinho/finalizar/finalizar/finalizar.component';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'carrinho',
     component: CarrinhoComponent,
+  },
+  {
+    path: 'finalizar',
+    component: FinalizarComponent,
   },
 ];
 

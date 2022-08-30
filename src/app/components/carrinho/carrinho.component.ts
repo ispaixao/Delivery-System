@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ModalService } from './../../shared/services/modal/modal.service';
 import { CarrinhoService } from './../../core/services/carrinho/carrinho.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -13,9 +14,12 @@ export class CarrinhoComponent implements OnInit {
   valorProdutos!: number;
   valorTotal!: number;
   desconto!: number;
-  @ViewChild('template') template;
 
-  constructor(private carrinhoService: CarrinhoService, private modalService: ModalService) {}
+  constructor(
+    private carrinhoService: CarrinhoService,
+    private modalService: ModalService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getCarrinho();
@@ -50,12 +54,4 @@ export class CarrinhoComponent implements OnInit {
   removerTodos(): void {
     this.carrinhoService.esvaziarCarrinho();
   }
-
-
-  finalizar(): void{
-    this.modalService.openModal(this.template);
-  }
-
-
-
 }

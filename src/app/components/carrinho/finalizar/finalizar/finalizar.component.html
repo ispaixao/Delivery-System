@@ -1,0 +1,129 @@
+<div class="container">
+  <h5 class="text-center mt-3 mb-3">FINALIZAÇÃO</h5>
+  <form class="card p-2" [formGroup]="formFinalizacao">
+    <p class="text-center mt-2">DADOS PESSOAIS</p>
+    <div class="row row-cols-3">
+      <div class="col-12 col-lg-4">
+        <input
+          type="text"
+          formControlName="nome"
+          class="form-control mb-2"
+          placeholder="Nome"
+          required
+        />
+        <small
+          class="text-danger form-text"
+          *ngIf="formFinalizacao.get('nome')?.touched && formFinalizacao.get('nome')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+      </div>
+      <div class="col-12 col-lg-4">
+        <input
+          type="number"
+          formControlName="telefone"
+          class="form-control"
+          placeholder="Telefone"
+        />
+        <small
+          class="text-danger form-text"
+          *ngIf="formFinalizacao.get('telefone')?.touched && formFinalizacao.get('telefone')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+      </div>
+      <div class="col-12 col-lg-4">
+        <input
+          type="number"
+          formControlName="cpf"
+          class="form-control"
+          placeholder="CPF"
+        />
+        <small
+          class="text-danger form-text"
+          *ngIf="formFinalizacao.get('cpf')?.touched && formFinalizacao.get('cpf')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+      </div>
+      <div class="col-12">
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="E-mail"
+        />
+        <small
+          class="text-danger form-text"
+          *ngIf="formFinalizacao.get('email')?.touched && formFinalizacao.get('email')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+        <small
+          *ngIf="formFinalizacao.get('email')?.errors?.['email']"
+          class="text-danger form-text"
+          >Formato do e-mail incorreto.</small
+        >
+      </div>
+    </div>
+    <p class="text-center mt-2">ENDEREÇO</p>
+    <div class="row row-cols-2">
+      <div class="col-12 col-lg-10">
+        <input
+          type="text"
+          formControlName="rua"
+          class="form-control"
+          placeholder="Rua"
+          required
+        />
+        <small
+          class="text-danger form-text"
+          *ngIf="formFinalizacao.get('rua')?.touched && formFinalizacao.get('rua')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+      </div>
+      <div class="col-12 col-lg-2">
+        <input
+          type="number"
+          formControlName="numero"
+          class="form-control"
+          placeholder="Número"
+          required
+        />
+        <small
+          class="text-danger form-text"
+          *ngIf="formFinalizacao.get('numero')?.touched && formFinalizacao.get('numero')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          formControlName="bairro"
+          class="form-control"
+          placeholder="Bairro"
+          required
+        />
+        <small
+          class="text-danger form-text"
+          *ngIf="formFinalizacao.get('bairro')?.touched && formFinalizacao.get('bairro')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ponto de referência"
+        />
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12">
+        <button
+          class="btn btn-outline-success col-12"
+          [disabled]="formFinalizacao.invalid"
+        >
+          CONFIRMAR
+        </button>
+        <button class="btn btn-outline-danger col-12">CANCELAR</button>
+      </div>
+    </div>
+  </form>
+</div>

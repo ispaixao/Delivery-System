@@ -14,8 +14,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { FinalizarComponent } from './components/carrinho/finalizar/finalizar/finalizar.component';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CarrinhoComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    CarrinhoComponent,
+    FinalizarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +33,8 @@ import { SharedModule } from './shared/shared.module';
     FlexLayoutModule,
     CardapioModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

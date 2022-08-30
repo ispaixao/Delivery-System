@@ -14,8 +14,9 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
-
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 const MODULES = [
   MatIconModule,
@@ -32,7 +33,8 @@ const MODULES = [
   MatBadgeModule,
   MatProgressSpinnerModule,
   MatTableModule,
-  MatInputModule
+  MatInputModule,
+  MatRadioModule,
 ];
 
 @NgModule({
