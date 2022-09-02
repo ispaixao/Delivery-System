@@ -83,10 +83,13 @@
   </div>
 </ng-container>
 <ng-container *ngIf="produtos.length == 0">
-  <div class="container text-center">
+  <div class="container text-center col-12">
     <h5 class="m-3">Seu carrinho está vázio.</h5>
-    <button class="btn btn-info" routerLink="/cardapio">
-      IR PARA PRODUTOS
-    </button>
+    <img
+      class="img mb-5"
+      src="assets/Cart.png"
+      alt="Imagem de um carrinho de compras vazio."
+      style="height: 200px;"
+    />
   </div>
 </ng-container>
