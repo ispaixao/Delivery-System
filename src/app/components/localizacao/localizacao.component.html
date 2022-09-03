@@ -1,0 +1,51 @@
+<h4 class="text-center mt-2">Nosso estabelecimento</h4>
+<p class="text-center mt-3">Contamos com um excelente espaço para recebê-lo.</p>
+
+<div class="container col-md-6 col-lg-6 mb-3">
+  <carousel [isAnimated]="true" [interval]="5000">
+    <slide>
+      <img
+        src="assets/local/foto1.jpg"
+        alt="Primeira foto"
+        style="display: block; width: 100%"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <p class="legenda">Ambiente familiar e aconchegante para você saborear sua refeição.</p>
+      </div>
+    </slide>
+    <slide>
+      <img
+        src="assets/local/foto2.jpg"
+        alt="Segunda foto"
+        style="display: block; width: 100%"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <p class="legenda">Feito com amor e carinho para te conquistar desde da primeira mordida.</p>
+      </div>
+    </slide>
+    <slide>
+      <img
+        src="assets/local/foto3.jpg"
+        alt="Terceira foto"
+        style="display: block; width: 100%"
+      />
+      <div class="carousel-caption d-none d-md-block">
+        <p class="legenda">O melhor atendimento, para o melhor cliente.</p>
+      </div>
+    </slide>
+  </carousel>
+</div>
+
+<div class="container text-center col-12 col-lg-6 col-md-6 mb-3">
+  <h4>Nossa localização</h4>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117173.77625546676!2d-46.57278983750003!3d-23.3997726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8bd671a832ef%3A0x273dd9698eabc0ff!2sHamburgueria%20Artesanal!5e0!3m2!1spt-BR!2sbr!4v1662163363368!5m2!1spt-BR!2sbr"
+    width="400"
+    height="250"
+    style="border: 0"
+    allowfullscreen="100%"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+  <div>Gostaria de falar conosco? <a routerLink="/contato">Clique aqui</a></div>
+</div>

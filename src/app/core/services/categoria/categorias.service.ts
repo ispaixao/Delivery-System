@@ -16,10 +16,4 @@ export class CategoriasService {
   getCategorias(): Observable<Categorias> {
     return this.httpClient.get<Categorias>(`${this.API}/categoria`).pipe();
   }
-
-  getCategoriasPorID(categoriaId: number): Observable<Categoria> {
-    return this.httpClient.get<Categoria>(
-      `${this.API}/categoria=${categoriaId}`
-    );
-  }
 }

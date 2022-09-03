@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
-const MODULES = [TooltipModule, ModalModule];
+const MODULES = [TooltipModule, ModalModule, CarouselModule];
 
 @NgModule({
   declarations: [],

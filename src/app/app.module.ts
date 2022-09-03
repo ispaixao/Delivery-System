@@ -11,16 +11,17 @@ import { AngularMaterialModule } from './core/Material/angular-material/angular-
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
+import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CarrinhoComponent,
     FinalizarComponent,
+    LocalizacaoComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,8 @@ import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.co
     CardapioModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

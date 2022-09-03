@@ -35,7 +35,6 @@ export class ProdutosComponent implements OnInit {
 
   getProdutos(): void {
     const paramId = this.route.snapshot.queryParams['titulo'];
-    console.log(paramId);
     const param = paramId || '';
 
     this.produtoService.getProdutos(param).subscribe(

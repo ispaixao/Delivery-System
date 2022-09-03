@@ -3,6 +3,7 @@ import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'finalizar',
     component: FinalizarComponent,
+  },
+  {
+    path: 'localizacao',
+    component: LocalizacaoComponent,
   },
 ];
 
