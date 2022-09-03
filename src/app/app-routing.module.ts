@@ -1,3 +1,4 @@
+import { ContatoComponent } from './components/contato/contato.component';
 import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { NgModule } from '@angular/core';
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'localizacao',
     component: LocalizacaoComponent,
+  },
+  {
+    path: 'contato',
+    component: ContatoComponent,
   },
 ];
 

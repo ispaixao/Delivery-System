@@ -15,6 +15,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
+import { ContatoComponent } from './components/contato/contato.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { LocalizacaoComponent } from './components/localizacao/localizacao.compo
     CarrinhoComponent,
     FinalizarComponent,
     LocalizacaoComponent,
+    ContatoComponent,
   ],
   imports: [
     BrowserModule,

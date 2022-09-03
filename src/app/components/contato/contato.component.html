@@ -1,0 +1,88 @@
+<h4 class="text-center m-3">Contato</h4>
+
+<div class="container">
+  <form [formGroup]="formContato">
+    <div class="row">
+      <div class="col-12">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Nome"
+          formControlName="nome"
+          required
+        />
+        <small
+          class="text-danger"
+          *ngIf="formContato.get('nome')?.touched && formContato.get('nome')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Telefone"
+          formControlName="telefone"
+          required
+        />
+        <small
+          class="text-danger"
+          *ngIf="
+            formContato.get('telefone')?.touched && formContato.get('telefone')?.errors?.['required']
+          "
+          >Campo obrigatório</small
+        >
+        <input
+          class="form-control"
+          type="email"
+          placeholder="E-mail"
+          formControlName="email"
+          required
+        />
+        <small
+          class="text-danger"
+          *ngIf="formContato.get('email')?.touched && formContato.get('email')?.errors?.['required']"
+          >Campo obrigatório</small
+        >
+        <small
+          class="text-danger"
+          *ngIf="formContato.get('email')?.errors?.['email']"
+          >E-mail inválido</small
+        >
+        <textarea class="form-control" placeholder="Mensagem"></textarea>
+        <small
+          class="text-danger"
+          *ngIf="
+            formContato.get('mensagem')?.touched && formContato.get('mensagem')?.errors?.['minLength']
+          "
+          >Campo obrigatório</small
+        >
+        <small
+          class="text-danger"
+          *ngIf="
+           formContato.get('mensagem')?.errors?.['maxLength']
+          "
+          >Máximo: 300 caracteres</small
+        >
+      </div>
+    </div>
+  </form>
+  <input type="checkbox" />
+  Deseja receber nossas promoções por e-mail?
+  <button
+    class="btn btn-outline-primary mt-3 col-12"
+    [disabled]="formContato.invalid"
+    (click)="enviar()"
+  >
+    ENVIAR
+  </button>
+</div>
+
+<ng-template #template>
+  <p class="text-center mt-3">Mensagem enviada com sucesso.</p>
+  <button
+    class="btn btn-outline-info mt-3"
+    (click)="hideModal()"
+    [routerLink]="''"
+  >
+    FECHAR
+  </button>
+</ng-template>
