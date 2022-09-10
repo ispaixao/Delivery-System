@@ -44,10 +44,10 @@ namespace DeliveryAPI.Controllers.Services
 
     }
 
-    public ReadProdutoDTO RecuperaProdutoPorCategoria(string categoria)
+    public List<ReadProdutoDTO> RecuperaProdutoPorCategoria(string categoria)
     {
-      Produto produtos = _context.Produtos.FirstOrDefault(produto => produto.Categoria == categoria);
-      ReadProdutoDTO dto = _mapper.Map<ReadProdutoDTO>(produtos);
+      List<Produto> produtos = _context.Produtos.Where(produto => produto.Categoria == categoria).ToList();
+      List<ReadProdutoDTO> dto = _mapper.Map<List<ReadProdutoDTO>>(produtos);
 
       if (produtos == null) return null;
 

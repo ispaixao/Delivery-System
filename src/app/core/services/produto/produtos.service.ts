@@ -16,7 +16,7 @@ export class ProdutosService {
   getProdutos(categoria: string): Observable<Produtos> {
     return this.httpclient.get<Produtos>(
       `${this.API}/Produto/categoria=${categoria}`
-    ).pipe(tap(console.log));
+    );
   }
 
 

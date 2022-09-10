@@ -43,7 +43,7 @@ namespace DeliveryAPI.Controllers
         [HttpGet("categoria={param}")]
         public IActionResult RecuperaProdutoPorCategoria([FromRoute] string param)
         {
-          ReadProdutoDTO dto = _service.RecuperaProdutoPorCategoria(param);
+          List<ReadProdutoDTO> dto = _service.RecuperaProdutoPorCategoria(param);
           if (dto == null) return NotFound();
            return Ok(dto);
         
