@@ -6,7 +6,6 @@ import { AngularMaterialModule } from './Material/angular-material/angular-mater
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AlertsComponent } from '../shared/components/alerts/alerts.component';
 
 const COMPONENTS = [FooterComponent, HeaderComponent];
 

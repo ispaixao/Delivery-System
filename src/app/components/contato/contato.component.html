@@ -47,18 +47,22 @@
           *ngIf="formContato.get('email')?.errors?.['email']"
           >E-mail inválido</small
         >
-        <textarea class="form-control" placeholder="Mensagem"></textarea>
+        <textarea
+          class="form-control"
+          placeholder="Mensagem"
+          formControlName="mensagem"
+        ></textarea>
         <small
           class="text-danger"
           *ngIf="
-            formContato.get('mensagem')?.touched && formContato.get('mensagem')?.errors?.['minLength']
+            formContato.get('mensagem')?.touched && formContato.get('mensagem')?.errors?.['required']
           "
           >Campo obrigatório</small
         >
         <small
           class="text-danger"
           *ngIf="
-           formContato.get('mensagem')?.errors?.['maxLength']
+          formContato.get('mensagem')?.touched && formContato.get('mensagem')?.errors?.['maxLength']
           "
           >Máximo: 300 caracteres</small
         >

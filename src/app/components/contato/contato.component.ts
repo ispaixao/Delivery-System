@@ -23,7 +23,7 @@ export class ContatoComponent implements OnInit {
       nome: ['', [Validators.min(4), Validators.required]],
       telefone: ['', [Validators.required]],
       email: ['', [Validators.email, Validators.required]],
-      mensagem: ['', [Validators.minLength(10), Validators.maxLength(300)]],
+      mensagem: ['', [Validators.maxLength(300), Validators.required]],
     });
   }
 

@@ -14,6 +14,6 @@ export class CategoriasService {
   constructor(private httpClient: HttpClient) {}
 
   getCategorias(): Observable<Categorias> {
-    return this.httpClient.get<Categorias>(`${this.API}/categoria`).pipe();
+    return this.httpClient.get<Categorias>(`${this.API}/Categoria`).pipe();
   }
 }

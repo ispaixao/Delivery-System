@@ -103,5 +103,23 @@
       "titulo": "Bebidas",
       "foto": "assets/Bebidas/logo.png"
     }
+  ],
+
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "igor@igor.com",
+      "senha": "igor"
+    },
+    {
+      "id": 2,
+      "email": "igor1@igor.com",
+      "senha": "Igor1234@"
+    },
+    {
+      "id": 3,
+      "email": "igor2@igor.com",
+      "senha": "Igor1234"
+    }
   ]
 }

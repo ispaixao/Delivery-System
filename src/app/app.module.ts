@@ -1,3 +1,5 @@
+import { LoginModule } from './components/login/login.module';
+
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardapioModule } from './components/cardapio/cardapio.module';
@@ -16,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
 import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 import { ContatoComponent } from './components/contato/contato.component';
+import { AreaLogadaComponent } from './components/area-logada/area-logada.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,7 @@ import { ContatoComponent } from './components/contato/contato.component';
     FinalizarComponent,
     LocalizacaoComponent,
     ContatoComponent,
+    AreaLogadaComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { ContatoComponent } from './components/contato/contato.component';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent],

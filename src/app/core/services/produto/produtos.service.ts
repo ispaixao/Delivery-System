@@ -1,9 +1,7 @@
-import { Categoria } from 'src/app/core/model/Categoria';
-import { CategoriasService } from '../categoria/categorias.service';
 import { Produtos } from '../../model/Produto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Produto } from '../../model/Produto';
 
@@ -17,19 +15,9 @@ export class ProdutosService {
 
   getProdutos(categoria: string): Observable<Produtos> {
     return this.httpclient.get<Produtos>(
-      `${this.API}/produtos/?categoria=${categoria}`
-    );
+      `${this.API}/Produto/categoria=${categoria}`
+    ).pipe(tap(console.log));
   }
 
-  // GET SERÁ PELO NOME DA CATEGORIA.
 
-  getProdutoPorCategoria(categoria: string): Observable<Produto> {
-    return this.httpclient.get<Produto>(
-      `${this.API}/produtos/?categoria=${categoria}`
-    );
-  }
-
-  getProdutoSelecionado(id: number): Observable<Produto> {
-    return this.httpclient.get<Produto>(`${this.API}/produtos?id=${id}`);
-  }
 }
