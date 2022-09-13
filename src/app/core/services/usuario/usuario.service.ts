@@ -1,6 +1,9 @@
+import { Router } from '@angular/router';
+import { tap, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Usuario } from '../../model/Usuario';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +11,14 @@ import { Injectable } from '@angular/core';
 export class UsuarioService {
   API = environment.API;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
-  logar(email: string, senha: string) {}
+  logar(usuario: any): Observable<HttpResponse<any>> {
+    console.log(usuario);
+    this.router.navigate['interno']
+    return this.httpClient.post(`${this.API}/Login`, usuario, {
+      observe: 'response'}
+      );
+
+  }
 }

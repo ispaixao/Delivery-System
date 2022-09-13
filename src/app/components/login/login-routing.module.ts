@@ -1,3 +1,4 @@
+import { AreaLogadaComponent } from './../area-logada/area-logada.component';
 import { LoginComponent } from './login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,6 +8,10 @@ const routes: Routes = [
     path: '',
     component: LoginComponent,
   },
+  {
+    path: 'interno',
+    component: AreaLogadaComponent
+  }
 ];
 
 @NgModule({

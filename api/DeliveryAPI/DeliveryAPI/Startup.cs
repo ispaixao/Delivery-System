@@ -2,11 +2,13 @@ using DeliveryAPI.Controllers.Services;
 using DeliveryAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 
 namespace DeliveryAPI
@@ -24,20 +26,33 @@ namespace DeliveryAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("StringConnection")));
+            services.AddDbContext<UserDbContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("StringConnection")));
+            services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(opts => {
+              opts.SignIn.RequireConfirmedEmail = false;
+              opts.Lockout.AllowedForNewUsers = false;
+              opts.User.RequireUniqueEmail = false;
 
 
+            }
+            ).AddEntityFrameworkStores<UserDbContext>();
 
 
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
+          services.AddControllers();
+          services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DeliveryAPI", Version = "v1" });
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            /* SERVICES PRODUTO, CATEGORIA */
             services.AddScoped<ProdutoService, ProdutoService>();
             services.AddScoped<CategoriaService, CategoriaService>();
-            services.AddCors();
+            services.AddScoped<UsuarioService, UsuarioService>();
+            services.AddScoped<LoginService, LoginService>();
+
+
+
+      services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,10 +10,10 @@
       <div class="align-items-center">
         <div class="form-group">
           <input
-            type="email"
+            type="text"
             class="form-control"
-            placeholder="E-mail"
-            formControlName="email"
+            placeholder="Usuário"
+            formControlName="usuario"
             required
           />
         </div>
@@ -35,6 +35,7 @@
         <button
           [disabled]="loginForm.invalid"
           type="submit"
+          (click)="validar()"
           class="btn btn-outline-primary col-12"
         >
           Entrar

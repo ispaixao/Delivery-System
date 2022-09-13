@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using KeyAttribute = System.ComponentModel.DataAnnotations.KeyAttribute;
 
-namespace DeliveryAPI.Model
+namespace DeliveryAPI.Model.Models
 {
   public class Produto
   {

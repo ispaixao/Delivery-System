@@ -1,7 +1,7 @@
 using AutoMapper;
 using DeliveryAPI.Data;
-using DeliveryAPI.Model;
 using DeliveryAPI.Model.DTOs.CategoriaDTO;
+using DeliveryAPI.Model.Models;
 using FluentResults;
 using System.Collections.Generic;
 using System.Linq;

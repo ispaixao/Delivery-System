@@ -1,7 +1,7 @@
 using AutoMapper;
 using DeliveryAPI.Data;
-using DeliveryAPI.Model;
 using DeliveryAPI.Model.DTOs.ProdutoDTO;
+using DeliveryAPI.Model.Models;
 using FluentResults;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;

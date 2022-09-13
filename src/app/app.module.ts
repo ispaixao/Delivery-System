@@ -27,7 +27,6 @@ import { AreaLogadaComponent } from './components/area-logada/area-logada.compon
     FinalizarComponent,
     LocalizacaoComponent,
     ContatoComponent,
-    AreaLogadaComponent,
   ],
   imports: [
     BrowserModule,

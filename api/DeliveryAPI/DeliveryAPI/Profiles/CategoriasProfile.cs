@@ -1,6 +1,6 @@
 using AutoMapper;
-using DeliveryAPI.Model;
 using DeliveryAPI.Model.DTOs.CategoriaDTO;
+using DeliveryAPI.Model.Models;
 
 namespace DeliveryAPI.Profiles
 {
