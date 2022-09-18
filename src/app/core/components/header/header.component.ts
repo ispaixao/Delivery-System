@@ -1,7 +1,9 @@
+import { Menus } from './../../model/Menu';
 import { CarrinhoService } from './../../services/carrinho/carrinho.service';
 import { Produto } from 'src/app/core/model/Produto';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +12,35 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class HeaderComponent implements OnInit {
   totalItens!: number;
+
+  buttons: Menus =
+  [
+    {
+      nome: "INÍCIO",
+      type: "btn-primary",
+      router: "",
+    },
+    {
+      nome: "CARDAPIO",
+      type: "btn-primary",
+      router: "/cardapio"
+    },
+    {
+      nome: "LOCALIZAÇÃO",
+      type: "btn-primary",
+      router: "/localizacao"
+    },
+    {
+      nome: "CONTATO",
+      type: "btn-primary",
+      router: "/contato"
+    },
+
+  ]
+
+
+
+
   constructor(private carrinhoService: CarrinhoService) {}
   ngOnInit(): void {
     this.getCarrinho();

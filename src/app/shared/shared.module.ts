@@ -4,7 +4,6 @@ import { NgxBootstrapModule } from './../core/Material/ngx-bootstrap/ngx-bootstr
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlertsComponent } from './components/alerts/alerts.component';
-
 const COMPONENTS = [AlertsComponent];
 const MODULES = [NgxBootstrapModule, AngularMaterialModule, RouterModule];
 

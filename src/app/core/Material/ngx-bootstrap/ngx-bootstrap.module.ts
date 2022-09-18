@@ -4,8 +4,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
-const MODULES = [TooltipModule, ModalModule, CarouselModule];
+const MODULES = [TooltipModule, ModalModule, CarouselModule, BsDropdownModule];
 
 @NgModule({
   declarations: [],

@@ -1,4 +1,4 @@
-<ng-container *ngIf="produtos.length != 0">
+<ng-container class="h-100" *ngIf="produtos.length != 0">
   <div class="container">
     <h3 class="text-center m-3">Carrinho de compras</h3>
     <ul class="list-group m-3">
@@ -83,10 +83,9 @@
   </div>
 </ng-container>
 <ng-container *ngIf="produtos.length == 0">
-  <div class="container text-center col-12">
+  <div class="container col-12 text-center">
     <h5 class="m-3">Seu carrinho está vázio.</h5>
     <img
-      class="img mb-5"
       src="assets/Cart.png"
       alt="Imagem de um carrinho de compras vazio."
       style="height: 200px;"

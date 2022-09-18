@@ -1,3 +1,5 @@
+import { CardapioModule } from './../components/cardapio/cardapio.module';
+import { SharedModule } from './../shared/shared.module';
 import { NgxBootstrapModule } from './Material/ngx-bootstrap/ngx-bootstrap.module';
 import { RouterModule } from '@angular/router';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
@@ -10,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 const COMPONENTS = [FooterComponent, HeaderComponent];
 
 const MODULES = [
+  CommonModule,
   AngularMaterialModule,
   RouterModule,
   FlexLayoutModule,
@@ -18,7 +21,7 @@ const MODULES = [
 
 @NgModule({
   declarations: [COMPONENTS],
-  imports: [CommonModule, MODULES],
+  imports: [MODULES],
   /* COMPONENTS FOI EXPORTADO PARA UTILIZAÇÃO EM OUTROS MODULOS*/
   exports: [MODULES, COMPONENTS],
 })

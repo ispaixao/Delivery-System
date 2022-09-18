@@ -1,43 +1,54 @@
-<header class="header" fxLayout="row" fxLayoutAlign="center center">
-  <img
-    class="ml-3"
-    [routerLink]="['']"
-    style="cursor: pointer"
-    src="assets/logo1.png"
-    alt="logotipo"
-  />
-
-  <button class="ml-auto" [routerLink]="['carrinho']" mat-icon-button>
-    <mat-icon
-      matBadge="{{ totalItens }}"
-      matBadgeSize="small"
-      matBadgePosition="after"
-      matTooltip="Carrinho"
-      >shopping_cart</mat-icon
-    >
-  </button>
-  <button mat-icon-button>
-    <mat-icon matTooltip="Entrar" routerLink="login">account_circle</mat-icon>
-  </button>
+<header>
+  <div class="header align-items-center" fxLayout="row">
+    <img
+      class="ml-3"
+      [routerLink]="['']"
+      style="cursor: pointer"
+      src="assets/logo1.png"
+      alt="logotipo"
+    />
+    <div class="btn-group" role="group">
+      <button
+        *ngFor="let button of buttons"
+        type="button"
+        class="btn {{ button.type }}"
+        routerLink="{{button.router}}"
+      >
+        {{ button.nome }}
+      </button>
+    </div>
+    <button class="ml-auto" [routerLink]="['carrinho']" mat-icon-button>
+      <mat-icon
+        matBadge="{{ totalItens }}"
+        matBadgeSize="small"
+        matBadgePosition="after"
+        matTooltip="Carrinho"
+        >shopping_cart</mat-icon
+      >
+    </button>
+    <button mat-icon-button>
+      <mat-icon matTooltip="Entrar" routerLink="login">account_circle</mat-icon>
+    </button>
+  </div>
 </header>
 
-<div
+<!-- <div
   class="div-menu mat-elevation-z8"
   fxLayout="row"
   fxLayoutAlign="space-evenly start"
 >
   <!--MENU - HOME -->
-  <button mat-button routerLink="">INICÍO</button>
+<!-- <button mat-button routerLink="">INICÍO</button> -->
 
-  <!--MENU - CARDAPIO -->
+<!--MENU - CARDAPIO -->
 
-  <button mat-button routerLink="/cardapio">CARDÁPIO</button>
+<!-- <button mat-button routerLink="/cardapio">CARDÁPIO</button> -->
 
-  <!--MENU - LOCALIZAÇÃO -->
+<!--MENU - LOCALIZAÇÃO -->
 
-  <button mat-button routerLink="/localizacao">NOSSA LOCALIZAÇÃO</button>
+<!-- <button mat-button routerLink="/localizacao">NOSSA LOCALIZAÇÃO</button> -->
 
-  <!--MENU - LOCALIZAÇÃO -->
+<!--MENU - LOCALIZAÇÃO -->
 
-  <button mat-button routerLink="/contato">CONTATO</button>
-</div>
+<!-- <button mat-button routerLink="/contato">CONTATO</button> -->
+<!-- </div> -->

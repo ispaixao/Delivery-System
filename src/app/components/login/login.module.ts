@@ -1,6 +1,4 @@
 import { AngularMaterialModule } from './../../core/Material/angular-material/angular-material.module';
-import { CoreModule } from './../../core/core.module';
-import { AreaLogadaComponent } from './../area-logada/area-logada.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';
 import { NgModule } from '@angular/core';

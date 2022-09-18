@@ -1,6 +1,5 @@
 import { AreaLogadaModule } from './components/area-logada/area-logada.module';
 import { LoginModule } from './components/login/login.module';
-
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardapioModule } from './components/cardapio/cardapio.module';
@@ -19,7 +18,7 @@ import { SharedModule } from './shared/shared.module';
 import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 import { ContatoComponent } from './components/contato/contato.component';
-import { AreaLogadaComponent } from './components/area-logada/area-logada.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +30,7 @@ import { AreaLogadaComponent } from './components/area-logada/area-logada.compon
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     AngularMaterialModule,
     BrowserAnimationsModule,

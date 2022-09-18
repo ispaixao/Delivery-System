@@ -7,4 +7,6 @@ import { Component, TemplateRef, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'Delivery';
+
+
 }

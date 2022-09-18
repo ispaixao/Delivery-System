@@ -1,11 +1,11 @@
-import { LoginComponent } from './components/login/login.component';
+import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
-import { ComponentRef, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
+import { LocalizacaoComponent } from './components/localizacao/localizacao.component';;
 
 const routes: Routes = [
   {
