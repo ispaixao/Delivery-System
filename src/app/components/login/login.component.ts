@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      usuario: ['', [Validators.required]],
+      email: ['', [Validators.email,  Validators.required]],
       senha: ['', Validators.required],
     });
   }
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     const usuario = this.loginForm.getRawValue() as Usuario;
     this.usuarioService.logar(usuario).subscribe(
       () => {
-        this.router.navigate(['interno']);
+        this.router.navigate(['restrito']);
       },
       (error) => {
         this.alertService.showAlert(

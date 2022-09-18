@@ -12,10 +12,9 @@ import { LoginComponent } from './login.component';
     LoginRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreModule,
     AngularMaterialModule,
   ],
-  declarations: [LoginComponent, AreaLogadaComponent],
+  declarations: [LoginComponent],
   exports: [LoginComponent]
 })
 export class LoginModule { }

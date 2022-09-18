@@ -8,10 +8,6 @@ const routes: Routes = [
     path: '',
     component: LoginComponent,
   },
-  {
-    path: 'interno',
-    component: AreaLogadaComponent
-  }
 ];
 
 @NgModule({

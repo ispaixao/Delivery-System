@@ -1,3 +1,4 @@
+import { AreaLogadaModule } from './components/area-logada/area-logada.module';
 import { LoginModule } from './components/login/login.module';
 
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
@@ -41,7 +42,8 @@ import { AreaLogadaComponent } from './components/area-logada/area-logada.compon
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    LoginModule
+    LoginModule,
+    AreaLogadaModule
   ],
   providers: [],
   bootstrap: [AppComponent],

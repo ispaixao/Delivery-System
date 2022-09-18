@@ -13,7 +13,7 @@ namespace DeliveryAPI.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    caminhoImagem = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Foto = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

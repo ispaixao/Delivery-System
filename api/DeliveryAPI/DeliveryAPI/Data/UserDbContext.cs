@@ -6,8 +6,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace DeliveryAPI.Data
 {
-  public class UserDbContext : IdentityDbContext<IdentityUser<int>, IdentityRole<int>, int>
+  public class UserDbContext : IdentityDbContext<CustomIdentityUser, IdentityRole<int>, int>
   {
+
     private IConfiguration _configuration;
 
     public UserDbContext(DbContextOptions<UserDbContext> opt, IConfiguration configuration) : base(opt)
@@ -15,8 +16,17 @@ namespace DeliveryAPI.Data
       _configuration = configuration;
     }
 
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+      base.OnModelCreating(builder);
 
-    public DbSet<Usuario> Usuarios { get; }
+      builder.Entity<IdentityRole<int>>().HasData(
+        new IdentityRole<int> { Id = 1, Name = "regular", NormalizedName = "REGULAR", });
+
+      builder.Entity<IdentityRole<int>>().HasData(
+        new IdentityRole<int> { Id = 2, Name = "admin", NormalizedName = "ADMIN" }
+        );
+    }
 
 
 

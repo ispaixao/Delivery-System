@@ -151,3 +151,11 @@ C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\
 C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\DeliveryAPI.StaticWebAssets.xml
+C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\obj\Debug\net5.0\staticwebassets\DeliveryAPI.StaticWebAssets.xml
+C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\igors\Desktop\Delivery2\Delivery\api\DeliveryAPI\DeliveryAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Metadata.dll

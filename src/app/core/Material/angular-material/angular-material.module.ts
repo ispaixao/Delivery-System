@@ -16,6 +16,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 const MODULES = [
@@ -35,6 +36,8 @@ const MODULES = [
   MatTableModule,
   MatInputModule,
   MatRadioModule,
+  MatSidenavModule
+
 ];
 
 @NgModule({

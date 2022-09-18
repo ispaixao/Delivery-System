@@ -1,5 +1,8 @@
 using DeliveryAPI.Controllers.Services;
 using DeliveryAPI.Data;
+using DeliveryAPI.Model.Models;
+using DeliveryAPI.Model.Token;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -7,9 +10,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
+using System.Text;
 
 namespace DeliveryAPI
 {
@@ -27,16 +32,42 @@ namespace DeliveryAPI
         {
             services.AddDbContext<AppDbContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("StringConnection")));
             services.AddDbContext<UserDbContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("StringConnection")));
-            services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(opts => {
-              opts.SignIn.RequireConfirmedEmail = false;
-              opts.Lockout.AllowedForNewUsers = false;
-              opts.User.RequireUniqueEmail = false;
+            services.AddIdentity<CustomIdentityUser, IdentityRole<int>>(opts =>
+                {
+
+                })
+                .AddEntityFrameworkStores<UserDbContext>()
+                .AddDefaultTokenProviders();
+
+      // CONFIGS JWT
+
+      var appSettingsSection = Configuration.GetSection("JwtOptions");
+          services.Configure<JwtOptions>(appSettingsSection);
+
+          var jwtOptions = appSettingsSection.Get<JwtOptions>();
+          var key = Encoding.ASCII.GetBytes(jwtOptions.SecurityKey);
 
 
-            }
-            ).AddEntityFrameworkStores<UserDbContext>();
 
-
+          services.AddAuthentication(opts =>
+          {
+              
+              opts.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+              opts.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+          }).AddJwtBearer(token =>
+            {
+                token.RequireHttpsMetadata = true;
+                token.SaveToken = true;
+                token.TokenValidationParameters = new TokenValidationParameters
+                {
+                  ValidateIssuerSigningKey = true,
+                  IssuerSigningKey = new SymmetricSecurityKey(key),
+                  ValidateIssuer = true,
+                  ValidateAudience = true,
+                  ValidAudience = jwtOptions.Audience,
+                  ValidIssuer = jwtOptions.Issuer
+                };
+            });
           services.AddControllers();
           services.AddSwaggerGen(c =>
             {
@@ -49,6 +80,7 @@ namespace DeliveryAPI
             services.AddScoped<CategoriaService, CategoriaService>();
             services.AddScoped<UsuarioService, UsuarioService>();
             services.AddScoped<LoginService, LoginService>();
+            services.AddScoped<TokenService, TokenService>();
 
 
 
@@ -69,6 +101,8 @@ namespace DeliveryAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

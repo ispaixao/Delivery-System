@@ -1,5 +1,6 @@
 using DeliveryAPI.Controllers.Services;
 using DeliveryAPI.Model.DTOs.ProdutoDTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -16,13 +17,13 @@ namespace DeliveryAPI.Controllers
             _service = service;
         }
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public IActionResult CadastroProduto([FromBody] CreateProdutoDTO dto)
         {
             ReadProdutoDTO readProdutoDTO = _service.CadastroProduto(dto);
             return CreatedAtAction(nameof(RecuperaProdutoPorId), new { ID = readProdutoDTO.ID }, readProdutoDTO);
         }
-
 
 
         [HttpGet]
@@ -32,7 +33,7 @@ namespace DeliveryAPI.Controllers
 
             if (dto == null)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             return Ok(dto);

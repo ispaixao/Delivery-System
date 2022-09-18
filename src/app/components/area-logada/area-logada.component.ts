@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AreaLogadaComponent implements OnInit {
 
+
+  showFiller = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+  abrirMenu(): void{
+
+
+
+
   }
 
 }

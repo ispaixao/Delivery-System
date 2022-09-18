@@ -15,7 +15,6 @@ export class UsuarioService {
 
   logar(usuario: any): Observable<HttpResponse<any>> {
     console.log(usuario);
-    this.router.navigate['interno']
     return this.httpClient.post(`${this.API}/Login`, usuario, {
       observe: 'response'}
       );

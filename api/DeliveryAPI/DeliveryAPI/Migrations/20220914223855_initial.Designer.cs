@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DeliveryAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220909204722_AlterCategoria")]
-    partial class AlterCategoria
+    [Migration("20220914223855_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace DeliveryAPI.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DeliveryAPI.Model.Categoria", b =>
+            modelBuilder.Entity("DeliveryAPI.Model.Models.Categoria", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace DeliveryAPI.Migrations
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("DeliveryAPI.Model.Produto", b =>
+            modelBuilder.Entity("DeliveryAPI.Model.Models.Produto", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()

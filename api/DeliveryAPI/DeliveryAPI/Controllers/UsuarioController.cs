@@ -1,5 +1,6 @@
 using DeliveryAPI.Controllers.Services;
 using DeliveryAPI.Model.DTOs.UsuarioDTO;
+using DeliveryAPI.Model.Models;
 using FluentResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,17 +20,17 @@ namespace DeliveryAPI_Users.Controllers
     }
 
     [HttpPost]
-    public IActionResult Cadastro([FromBody] CreateUsuarioDTO dto)
+    public IActionResult Cadastro(CreateUsuarioDTO dto)
     {
       Result resultado = _service.Cadastro(dto);
       if (resultado.IsFailed) return StatusCode(500);
-      return Ok(resultado.WithSuccess("Criado com sucesso"));
+      return Ok(resultado);
     }
 
     [HttpGet]
     public IActionResult Buscar()
     {
-      List<IdentityUser<int>> identity = _service.Buscar();
+      List<CustomIdentityUser> identity = _service.Buscar();
       if (identity == null) return NotFound();
       return Ok(identity);
     }

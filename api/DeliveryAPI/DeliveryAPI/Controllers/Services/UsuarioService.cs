@@ -16,10 +16,10 @@ namespace DeliveryAPI.Controllers.Services
   {
 
     private IMapper _mapper;
-    private UserManager<IdentityUser<int>> _manager;
+    private UserManager<CustomIdentityUser> _manager;
     private UserDbContext _context;
 
-    public UsuarioService(IMapper mapper, UserManager<IdentityUser<int>> manager, UserDbContext context)
+    public UsuarioService(IMapper mapper, UserManager<CustomIdentityUser> manager,  UserDbContext context)
     {
       _mapper = mapper;
       _manager = manager;
@@ -29,37 +29,48 @@ namespace DeliveryAPI.Controllers.Services
 
     public Result Cadastro(CreateUsuarioDTO dto)
     {
-      var usuario = _mapper.Map<Usuario>(dto);
-      var identityUser = _mapper.Map<IdentityUser<int>>(usuario);
-      var resultadoIdentity = _manager.CreateAsync(identityUser, dto.Password);
+      var identity = new CustomIdentityUser
+       {
+        UserName = dto.Email,
+        Email = dto.Email,
+        EmailConfirmed = true,
+        CPF = dto.CPF,
+        DataNascimento = dto.DataNascimento,
+        LockoutEnabled = false,
+      };
 
+        
+       var resultadoIdentity = _manager.CreateAsync(identity, dto.Password);
+      
+      
       if (resultadoIdentity.Result.Succeeded)
       {
-        return Result.Ok();
+          _manager.AddToRoleAsync(identity, "admin").Wait();
+          return Result.Ok();
       }
 
       return Result.Fail("Erro inesperado");
 
     }
 
-    public List<IdentityUser<int>> Buscar()
+    public List<CustomIdentityUser> Buscar()
     {
-      List<IdentityUser<int>> identity;
+      List<CustomIdentityUser> identity;
       identity = _manager.Users.ToList();
 
       if (identity == null) return null;
 
-      List<IdentityUser<int>> usuarios = _mapper.Map< List<IdentityUser<int>>> (identity);
+      List<CustomIdentityUser> usuarios = _mapper.Map<List<CustomIdentityUser>> (identity);
       return usuarios;
     }
 
     public Result Atualizar(UpdateUsuarioDTO dto, int id)
     {
-      var usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.ID == id);
+      var usuario = _manager.Users.FirstOrDefault(usuario => usuario.Id == id);
       if(usuario == null) return null;
 
       _mapper.Map(dto, usuario);
-      _context.Usuarios.Update(usuario);
+      _manager.UpdateAsync(usuario);
       _context.SaveChanges();
       return Result.Ok();
     }

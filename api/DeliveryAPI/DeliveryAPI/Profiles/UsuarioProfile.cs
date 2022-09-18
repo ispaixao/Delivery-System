@@ -11,6 +11,7 @@ namespace DeliveryAPI.Profiles
     {
       CreateMap<CreateUsuarioDTO, Usuario>();
       CreateMap<Usuario, IdentityUser<int>>();
+      CreateMap<Usuario, CustomIdentityUser>();
       CreateMap<UpdateUsuarioDTO, Usuario>();
     }
   }

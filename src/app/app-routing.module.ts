@@ -42,6 +42,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./components/login/login.module').then((m) => m.LoginModule),
   },
+  {
+    path: 'restrito',
+    loadChildren: () =>
+      import('./components/area-logada/area-logada.module').then((m) => m.AreaLogadaModule),
+  },
 ];
 
 @NgModule({
