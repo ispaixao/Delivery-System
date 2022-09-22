@@ -1,54 +1,44 @@
-<header>
-  <div class="header align-items-center" fxLayout="row">
-    <img
-      class="ml-3"
-      [routerLink]="['']"
-      style="cursor: pointer"
-      src="assets/logo1.png"
-      alt="logotipo"
-    />
-    <div class="btn-group" role="group">
-      <button
-        *ngFor="let button of buttons"
-        type="button"
-        class="btn {{ button.type }}"
-        routerLink="{{button.router}}"
-      >
-        {{ button.nome }}
-      </button>
+<header class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 align-self-end">
+        <img
+          [routerLink]="['']"
+          style="cursor: pointer"
+          src="assets/logo1.png"
+          alt="logotipo"
+        />
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-12 text-center align-self-end">
+        <div class="btn-group">
+          <button
+            style="border-radius: 5px; margin: 6px"
+            class="btn btn-shadow"
+            *ngFor="let button of buttons"
+            type="button"
+            routerLink="{{ button.router }}"
+          >
+            {{ button.nome }}
+          </button>
+        </div>
+      </div>
+      <div class="col-4 text-right mt-4">
+        <button class="" [routerLink]="['carrinho']" mat-icon-button>
+          <mat-icon
+            matBadge="{{ totalItens }}"
+            matBadgeSize="small"
+            matBadgePosition="after"
+            matTooltip="Carrinho"
+            >shopping_cart</mat-icon
+          >
+        </button>
+        <button mat-icon-button>
+          <mat-icon matTooltip="Entrar" routerLink="login"
+            >account_circle</mat-icon
+          >
+        </button>
+      </div>
     </div>
-    <button class="ml-auto" [routerLink]="['carrinho']" mat-icon-button>
-      <mat-icon
-        matBadge="{{ totalItens }}"
-        matBadgeSize="small"
-        matBadgePosition="after"
-        matTooltip="Carrinho"
-        >shopping_cart</mat-icon
-      >
-    </button>
-    <button mat-icon-button>
-      <mat-icon matTooltip="Entrar" routerLink="login">account_circle</mat-icon>
-    </button>
   </div>
 </header>
 
-<!-- <div
-  class="div-menu mat-elevation-z8"
-  fxLayout="row"
-  fxLayoutAlign="space-evenly start"
->
-  <!--MENU - HOME -->
-<!-- <button mat-button routerLink="">INICÍO</button> -->
-
-<!--MENU - CARDAPIO -->
-
-<!-- <button mat-button routerLink="/cardapio">CARDÁPIO</button> -->
-
-<!--MENU - LOCALIZAÇÃO -->
-
-<!-- <button mat-button routerLink="/localizacao">NOSSA LOCALIZAÇÃO</button> -->
-
-<!--MENU - LOCALIZAÇÃO -->
-
-<!-- <button mat-button routerLink="/contato">CONTATO</button> -->
-<!-- </div> -->

@@ -58,6 +58,7 @@ namespace DeliveryAPI
             {
                 token.RequireHttpsMetadata = true;
                 token.SaveToken = true;
+                
                 token.TokenValidationParameters = new TokenValidationParameters
                 {
                   ValidateIssuerSigningKey = true,
@@ -108,7 +109,7 @@ namespace DeliveryAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+              endpoints.MapControllers();
             });
         }
     }

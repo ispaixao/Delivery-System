@@ -1,7 +1,13 @@
 footer {
-  background: #978715;
+  background: rgb(1, 12, 14);
+  background: linear-gradient(90deg, rgba(1, 12, 14, 1) 0%, rgba(72, 113, 102, 1) 50%, rgba(1, 12, 14, 1) 100%);
   font-size: 16px;
+  color: white;
   text-align: center;
   padding: 10px;
-  display: block;
+  -webkit-box-shadow: 0px -5px 8px 0px rgba(50, 50, 50, 0.74);
+  -moz-box-shadow: 0px -5px 8px 0px rgba(50, 50, 50, 0.74);
+  box-shadow: 0px -5px 8px 0px rgba(50, 50, 50, 0.74);
+
+  position: relative;
 }

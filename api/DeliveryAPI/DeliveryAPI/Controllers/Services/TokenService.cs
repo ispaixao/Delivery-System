@@ -11,6 +11,7 @@ using Castle.DynamicProxy.Contributors;
 using Newtonsoft.Json.Linq;
 using DeliveryAPI.Model.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Net.Http;
 
 namespace DeliveryAPI.Controllers.Services
 {

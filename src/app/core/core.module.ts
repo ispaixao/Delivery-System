@@ -8,6 +8,8 @@ import { AngularMaterialModule } from './Material/angular-material/angular-mater
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AutenticacaoInterceptor } from './interceptors/autenticacao.interceptor';
 
 const COMPONENTS = [FooterComponent, HeaderComponent];
 
@@ -24,5 +26,12 @@ const MODULES = [
   imports: [MODULES],
   /* COMPONENTS FOI EXPORTADO PARA UTILIZAÇÃO EM OUTROS MODULOS*/
   exports: [MODULES, COMPONENTS],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AutenticacaoInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class CoreModule {}

@@ -1,3 +1,4 @@
+import { Usuario } from './../../model/Usuario';
 import { Menus } from './../../model/Menu';
 import { CarrinhoService } from './../../services/carrinho/carrinho.service';
 import { Produto } from 'src/app/core/model/Produto';
@@ -12,6 +13,7 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 })
 export class HeaderComponent implements OnInit {
   totalItens!: number;
+  usuario!: Usuario
 
   buttons: Menus =
   [
@@ -21,7 +23,7 @@ export class HeaderComponent implements OnInit {
       router: "",
     },
     {
-      nome: "CARDAPIO",
+      nome: "CARDÁPIO",
       type: "btn-primary",
       router: "/cardapio"
     },

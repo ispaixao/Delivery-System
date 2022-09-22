@@ -1,18 +1,26 @@
+import { UsuarioService } from './../../core/services/usuario-login/usuario.service';
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  RouterStateSnapshot,
-} from '@angular/router';
+import { CanLoad, Route, Router, UrlSegment, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LoginGuard implements CanActivate {
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): boolean {
+export class LoginGuard implements CanLoad {
+  constructor(private router: Router, private usuarioService: UsuarioService) {}
+
+  canLoad(
+    route: Route,
+    segments: UrlSegment[]
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    if (this.usuarioService.logado()) {
+      this.router.navigate(['restrito']);
+      return false;
+    }
     return true;
   }
 }

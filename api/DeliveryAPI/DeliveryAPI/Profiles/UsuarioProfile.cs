@@ -10,7 +10,6 @@ namespace DeliveryAPI.Profiles
       public UsuarioProfile()
     {
       CreateMap<CreateUsuarioDTO, Usuario>();
-      CreateMap<Usuario, IdentityUser<int>>();
       CreateMap<Usuario, CustomIdentityUser>();
       CreateMap<UpdateUsuarioDTO, Usuario>();
     }

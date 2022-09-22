@@ -22,12 +22,12 @@ namespace DeliveryAPI.Controllers
     public ActionResult Logar([FromBody] LoginRequest request)
     {
       var resultado = _service.Logar(request);
-      if (resultado.IsFailed)
+      if (string.IsNullOrEmpty(resultado))
       {
-        return Unauthorized(resultado.Errors);
+        return Unauthorized(resultado);
       }
 
-      return Ok(resultado);
+      return Ok(new {Token = resultado});
     }
 
   }

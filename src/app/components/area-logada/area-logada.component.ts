@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,17 +12,15 @@ export class AreaLogadaComponent implements OnInit {
 
   showFiller = false;
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
 
-  abrirMenu(): void{
-
-
-
-
+  logout(): void{
+    this.usuarioService.logout();
+    this.router.navigate(['']);
   }
 
 }
