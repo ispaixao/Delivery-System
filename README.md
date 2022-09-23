@@ -10,15 +10,25 @@ Obs: Não se esqueça de baixar os pacotes do NODE, para baixar os pacotes basta
 ## Andamento do projeto
 
 [X] Cárdapio de produtos.
+
 [X] Acesso de usuários.
+
 [X] Implementação do JWT (Json Web Token).
+
 [X] Carrinho de compras.
+
 [X] Página de localização.
+
 [X] Página de contato.
+
 [X] Página de administração do sistema.
+
 [] Cadastro de produtos.
+
 [] Cadatro de usuários.
+
 [] Cadastro de categorias.
+
 [] Cadastro de cupons de promoçóes. 
 
 ## Build
