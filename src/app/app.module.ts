@@ -1,3 +1,4 @@
+import { AutenticacaoModule } from './components/area-logada/autenticacao/autenticacao/autenticacao.module';
 import { AreaLogadaModule } from './components/area-logada/area-logada.module';
 import { LoginModule } from './components/login/login.module';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
@@ -12,13 +13,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './core/Material/angular-material/angular-material.module';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { CommonModule } from '@angular/common';
+import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +45,10 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     LoginModule,
-    AreaLogadaModule
+    AreaLogadaModule,
+    AutenticacaoModule
   ],
-  providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class AppModule {}

@@ -1,10 +1,8 @@
+import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
 import { Usuario } from './../../model/Usuario';
 import { Menus } from './../../model/Menu';
 import { CarrinhoService } from './../../services/carrinho/carrinho.service';
-import { Produto } from 'src/app/core/model/Produto';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 
 @Component({
   selector: 'app-header',
@@ -13,37 +11,35 @@ import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 })
 export class HeaderComponent implements OnInit {
   totalItens!: number;
-  usuario!: Usuario
+  usuario!: Usuario;
 
-  buttons: Menus =
-  [
+  buttons: Menus = [
     {
-      nome: "INÍCIO",
-      type: "btn-primary",
-      router: "",
+      nome: 'INÍCIO',
+      type: 'btn-primary',
+      router: '',
     },
     {
-      nome: "CARDÁPIO",
-      type: "btn-primary",
-      router: "/cardapio"
+      nome: 'CARDÁPIO',
+      type: 'btn-primary',
+      router: '/cardapio',
     },
     {
-      nome: "LOCALIZAÇÃO",
-      type: "btn-primary",
-      router: "/localizacao"
+      nome: 'LOCALIZAÇÃO',
+      type: 'btn-primary',
+      router: '/localizacao',
     },
     {
-      nome: "CONTATO",
-      type: "btn-primary",
-      router: "/contato"
+      nome: 'CONTATO',
+      type: 'btn-primary',
+      router: '/contato',
     },
+  ];
 
-  ]
-
-
-
-
-  constructor(private carrinhoService: CarrinhoService) {}
+  constructor(
+    private carrinhoService: CarrinhoService,
+    private usuarioService: UsuarioService
+  ) {}
   ngOnInit(): void {
     this.getCarrinho();
   }
@@ -52,5 +48,12 @@ export class HeaderComponent implements OnInit {
     this.carrinhoService.getProdutos().subscribe((itens) => {
       this.totalItens = itens.length;
     });
+  }
+
+  logado(): boolean {
+    if (this.usuarioService.logado() != null) {
+      return true;
+    }
+    return false;
   }
 }

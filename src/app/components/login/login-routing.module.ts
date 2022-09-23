@@ -1,3 +1,4 @@
+import { LoginGuard } from './login.guard';
 import { AreaLogadaComponent } from './../area-logada/area-logada.component';
 import { LoginComponent } from './login.component';
 import { NgModule } from '@angular/core';

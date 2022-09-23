@@ -19,6 +19,12 @@ mat-icon {
   border-color: black;
 }
 
+.btn2{
+  border-radius: 5px;
+}
+
+
+
 .btn-shadow {
   display: inline-block;
   vertical-align: middle;

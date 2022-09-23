@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gAMlSHaJkMyH1+Agq+P6qyuoFSgrQzBhq1fP5kSHf9UJmHpQN3A3Mm+CLc7ncUSnRaW99qmBoMtv4S6jAxWHjA==",
+  "dgSpecHash": "B55hCiGsB7R0IJkGCOepCga3Tv8HQ29hyZPo2wQXcQ0iQNBkDABmpBgtNFGO01RltyUpz7ebgtcxPZcx0EK1WA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\igors\\Desktop\\Delivery2\\Delivery\\api\\DeliveryAPI\\DeliveryAPI\\DeliveryAPI.csproj",
+  "projectFilePath": "C:\\Users\\igors\\Desktop\\Delivery2\\Delivery\\DeliveryAPI\\DeliveryAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\igors\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\igors\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

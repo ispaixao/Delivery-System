@@ -1,3 +1,4 @@
+import { TokenService } from './../../core/services/token/token.service';
 import { UsuarioService } from './../../core/services/usuario-login/usuario.service';
 import { Injectable } from '@angular/core';
 import { CanLoad, Route, Router, UrlSegment, UrlTree } from '@angular/router';
@@ -7,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginGuard implements CanLoad {
-  constructor(private router: Router, private usuarioService: UsuarioService) {}
+  constructor(private router: Router, private usuarioService: UsuarioService, private tokenService: TokenService) {}
 
   canLoad(
     route: Route,
@@ -17,7 +18,7 @@ export class LoginGuard implements CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.usuarioService.logado()) {
+    if (this.usuarioService.logado() != null) {
       this.router.navigate(['restrito']);
       return false;
     }

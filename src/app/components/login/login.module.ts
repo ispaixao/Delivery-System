@@ -1,3 +1,4 @@
+import { LoginGuard } from './login.guard';
 import { AngularMaterialModule } from './../../core/Material/angular-material/angular-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';

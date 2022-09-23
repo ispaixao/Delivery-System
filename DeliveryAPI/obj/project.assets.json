@@ -10415,11 +10415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\igors\\Desktop\\Delivery2\\Delivery\\api\\DeliveryAPI\\DeliveryAPI\\DeliveryAPI.csproj",
+      "projectUniqueName": "C:\\Users\\igors\\Desktop\\Delivery2\\Delivery\\DeliveryAPI\\DeliveryAPI.csproj",
       "projectName": "DeliveryAPI",
-      "projectPath": "C:\\Users\\igors\\Desktop\\Delivery2\\Delivery\\api\\DeliveryAPI\\DeliveryAPI\\DeliveryAPI.csproj",
+      "projectPath": "C:\\Users\\igors\\Desktop\\Delivery2\\Delivery\\DeliveryAPI\\DeliveryAPI.csproj",
       "packagesPath": "C:\\Users\\igors\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\igors\\Desktop\\Delivery2\\Delivery\\api\\DeliveryAPI\\DeliveryAPI\\obj\\",
+      "outputPath": "C:\\Users\\igors\\Desktop\\Delivery2\\Delivery\\DeliveryAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\igors\\AppData\\Roaming\\NuGet\\NuGet.Config",

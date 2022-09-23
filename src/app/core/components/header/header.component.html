@@ -1,44 +1,93 @@
-<header class="header">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-4 align-self-end">
-        <img
-          [routerLink]="['']"
-          style="cursor: pointer"
-          src="assets/logo1.png"
-          alt="logotipo"
-        />
-      </div>
-      <div class="col-md-4 col-lg-4 col-sm-12 text-center align-self-end">
-        <div class="btn-group">
-          <button
-            style="border-radius: 5px; margin: 6px"
-            class="btn btn-shadow"
-            *ngFor="let button of buttons"
-            type="button"
-            routerLink="{{ button.router }}"
-          >
-            {{ button.nome }}
+<ng-container *ngIf="!logado()">
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4 align-self-end">
+          <img
+            [routerLink]="['']"
+            style="cursor: pointer"
+            src="assets/logo1.png"
+            alt="logotipo"
+          />
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-12 text-center align-self-end">
+          <div class="btn-group">
+            <button
+              style="border-radius: 5px; margin: 6px"
+              class="btn btn-shadow"
+              *ngFor="let button of buttons"
+              type="button"
+              routerLink="{{ button.router }}"
+            >
+              {{ button.nome }}
+            </button>
+          </div>
+        </div>
+        <div class="col-4 text-right mt-4">
+          <button class="" [routerLink]="['carrinho']" mat-icon-button>
+            <mat-icon
+              matBadge="{{ totalItens }}"
+              matBadgeSize="small"
+              matBadgePosition="after"
+              matTooltip="Carrinho"
+              >shopping_cart</mat-icon
+            >
+          </button>
+          <button mat-icon-button>
+            <mat-icon matTooltip="Entrar" routerLink="login"
+              >account_circle</mat-icon
+            >
           </button>
         </div>
       </div>
-      <div class="col-4 text-right mt-4">
-        <button class="" [routerLink]="['carrinho']" mat-icon-button>
-          <mat-icon
-            matBadge="{{ totalItens }}"
-            matBadgeSize="small"
-            matBadgePosition="after"
-            matTooltip="Carrinho"
-            >shopping_cart</mat-icon
-          >
-        </button>
-        <button mat-icon-button>
-          <mat-icon matTooltip="Entrar" routerLink="login"
-            >account_circle</mat-icon
-          >
-        </button>
+    </div>
+  </header>
+</ng-container>
+
+<ng-container *ngIf="logado()">
+  <header class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4 align-self-end">
+          <img
+            [routerLink]="['']"
+            style="cursor: pointer"
+            src="assets/logo1.png"
+            alt="logotipo"
+          />
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-12 text-center align-self-end">
+          <div class="btn-group">
+            <button
+              style="border-radius: 5px; margin: 6px"
+              class="btn btn-shadow"
+              *ngFor="let button of buttons"
+              type="button"
+              routerLink="{{ button.router }}"
+            >
+              {{ button.nome }}
+            </button>
+          </div>
+        </div>
+        <div class="col-4 text-right mt-4">
+          <ng-container>
+            <button
+              class="btn2 btn-outline-danger btn-shadow"
+              style="color: black"
+              routerLink="restrito"
+            >
+              ÁREA RESTRITA
+            </button>
+            <button
+              class="btn2 btn-outline-danger btn-shadow"
+              style="color: black; margin-left: 15px;"
+              routerLink="restrito"
+            >
+              SAIR
+            </button>
+          </ng-container>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
+  </header>
+</ng-container>

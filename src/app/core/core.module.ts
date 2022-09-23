@@ -26,12 +26,5 @@ const MODULES = [
   imports: [MODULES],
   /* COMPONENTS FOI EXPORTADO PARA UTILIZAÇÃO EM OUTROS MODULOS*/
   exports: [MODULES, COMPONENTS],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AutenticacaoInterceptor,
-      multi: true,
-    },
-  ],
 })
 export class CoreModule {}

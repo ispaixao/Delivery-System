@@ -26,6 +26,6 @@ export class TokenService {
   }
 
   public possuiToken() {
-    return this.retornaToken();
+    return localStorage.getItem(this.token);
   }
 }
