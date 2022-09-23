@@ -2,26 +2,25 @@
 
 Front-end desenvolvido em Angular, com backend desenvolvido em .NET 5
 
-## Development server
+## Executando o projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para executar o projeto, basta abrir o terminal, executar o comando "cd delivery" e depois executar o comando "ng serve". Para executar a API você precisará ter o .NET instalado no seu computador, aperte F5 no Vs Code que ele executará a API. 
+Obs: Não se esqueça de baixar os pacotes do NODE, para baixar os pacotes basta executar o "cd delivery" e depois "npm i ou npm install".
 
-## Code scaffolding
+## Andamento do projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[X] Cárdapio de produtos.
+[X] Acesso de usuários.
+[X] Implementação do JWT (Json Web Token).
+[X] Carrinho de compras.
+[X] Página de localização.
+[X] Página de contato.
+[X] Página de administração do sistema.
+[] Cadastro de produtos.
+[] Cadatro de usuários.
+[] Cadastro de categorias.
+[] Cadastro de cupons de promoçóes. 
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
