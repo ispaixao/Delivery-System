@@ -9,7 +9,7 @@ Obs: Não se esqueça de baixar os pacotes do NODE, para baixar os pacotes basta
 
 ## Andamento do projeto
 
-[X] Cárdapio de produtos.
+[X] Cardápio de produtos.
 
 [X] Acesso de usuários.
 
