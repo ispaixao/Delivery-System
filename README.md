@@ -4,8 +4,8 @@ Front-end desenvolvido em Angular, com backend desenvolvido em .NET 5
 
 ## Executando o projeto
 
-Para executar o projeto, basta abrir o terminal, executar o comando "cd delivery" e depois executar o comando "ng serve". Para executar a API você precisará ter o .NET instalado no seu computador, aperte F5 no Vs Code que ele executará a API. 
-Obs: Não se esqueça de baixar os pacotes do NODE, para baixar os pacotes basta executar o "cd delivery" e depois "npm i ou npm install".
+Para executar o projeto, basta abrir o terminal, executar o comando `cd delivery` e depois executar o comando `ng serve`. Para executar a API você precisará ter o .NET instalado no seu computador, aperte `F5` no Vs Code que ele executará a API. 
+Obs: Não se esqueça de baixar os pacotes do NODE, para baixar os pacotes basta executar o `cd delivery` e depois `npm i` ou `npm install`.
 
 ## Andamento do projeto
 
