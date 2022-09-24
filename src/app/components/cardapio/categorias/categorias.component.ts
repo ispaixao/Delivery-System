@@ -5,7 +5,7 @@ import {
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
-import { Categoria, Categorias } from 'src/app/core/model/Categoria';
+import { Categoria, Categorias } from 'src/app/shared/model/Categoria';
 import { CategoriasService } from 'src/app/core/services/categoria/categorias.service';
 import { AlertsComponent } from 'src/app/shared/components/alerts/alerts.component';
 

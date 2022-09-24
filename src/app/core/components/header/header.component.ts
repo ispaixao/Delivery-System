@@ -1,6 +1,6 @@
 import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
-import { Usuario } from './../../model/Usuario';
-import { Menus } from './../../model/Menu';
+import { Usuario } from '../../../shared/model/Usuario';
+import { Menus } from '../../../shared/model/Menu';
 import { CarrinhoService } from './../../services/carrinho/carrinho.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -55,5 +55,9 @@ export class HeaderComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  logout(): void{
+    this.usuarioService.logout();
   }
 }

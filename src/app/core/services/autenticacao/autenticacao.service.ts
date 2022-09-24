@@ -2,7 +2,7 @@ import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UsuarioService } from '../usuario-login/usuario.service';
-import { Usuario } from '../../model/Usuario';
+import { Usuario } from '../../../shared/model/Usuario';
 import { tap } from 'rxjs';
 const API = environment.API;
 

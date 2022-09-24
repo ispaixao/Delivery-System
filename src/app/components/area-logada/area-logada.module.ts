@@ -1,3 +1,4 @@
+import { SharedModule } from './../../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { AngularMaterialModule } from './../../core/Material/angular-material/angular-material.module';
 import { NgxBootstrapModule } from './../../core/Material/ngx-bootstrap/ngx-bootstrap.module';
@@ -6,8 +7,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AreaLogadaRoutingModule } from './area-logada-routing.module';
 
-
-
 @NgModule({
   declarations: [AreaLogadaComponent],
   imports: [
@@ -15,8 +14,9 @@ import { AreaLogadaRoutingModule } from './area-logada-routing.module';
     NgxBootstrapModule,
     AngularMaterialModule,
     RouterModule,
-    AreaLogadaRoutingModule
+    AreaLogadaRoutingModule,
+    SharedModule,
   ],
-  exports: [AreaLogadaComponent]
+  exports: [AreaLogadaComponent],
 })
-export class AreaLogadaModule { }
+export class AreaLogadaModule {}

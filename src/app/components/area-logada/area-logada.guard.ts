@@ -18,7 +18,7 @@ export class AreaLogadaGuard implements CanLoad {
     | boolean
     | UrlTree {
     if (!this.usuarioService.logado()) {
-      this.router.navigate(['']);
+      this.router.navigate(['login']);
       return false;
     }
     return true;

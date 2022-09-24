@@ -6,7 +6,7 @@ import {
 } from '../../../shared/services/alert/alert.service';
 import { CarrinhoService } from './../../../core/services/carrinho/carrinho.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Produto, Produtos } from 'src/app/core/model/Produto';
+import { Produto, Produtos } from 'src/app/shared/model/Produto';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutosService } from 'src/app/core/services/produto/produtos.service';

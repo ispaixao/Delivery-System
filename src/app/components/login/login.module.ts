@@ -14,6 +14,6 @@ import { LoginComponent } from './login.component';
     AngularMaterialModule,
   ],
   declarations: [LoginComponent],
-  exports: [LoginComponent]
+  exports: [LoginComponent],
 })
-export class LoginModule { }
+export class LoginModule {}

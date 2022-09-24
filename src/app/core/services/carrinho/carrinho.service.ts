@@ -1,7 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Produto, Produtos } from '../../model/Produto';
+import { Produto, Produtos } from '../../../shared/model/Produto';
 
 @Injectable({
   providedIn: 'root',

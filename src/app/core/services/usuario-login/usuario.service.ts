@@ -2,7 +2,7 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Usuario } from '../../model/Usuario';
+import { Usuario } from '../../../shared/model/Usuario';
 import { TokenService } from '../token/token.service';
 import jwt_decode from 'jwt-decode';
 

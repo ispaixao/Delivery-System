@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { ModalService } from './../../shared/services/modal/modal.service';
 import { CarrinhoService } from './../../core/services/carrinho/carrinho.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Produto, Produtos } from 'src/app/core/model/Produto';
+import { Produto, Produtos } from 'src/app/shared/model/Produto';
 
 @Component({
   selector: 'app-carrinho',

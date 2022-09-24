@@ -6,7 +6,7 @@ import {
 } from './../../shared/services/alert/alert.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Usuario } from 'src/app/core/model/Usuario';
+import { Usuario } from 'src/app/shared/model/Usuario';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
 
