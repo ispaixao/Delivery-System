@@ -1,11 +1,24 @@
 # Delivery System
 
-Front-end desenvolvido em Angular, com backend desenvolvido em .NET 5
+Front-end desenvolvido em Angular, com backend desenvolvido em .NET 5 e com armazenamento no SQL SERVER.
+
+## Integrando API com o seu banco de dados
+
+Para conseguir salva os dados da aplicação, abra o `appsettings.json` e altere o `ConnectionStrings` com a sua string de conexão.
+
+`Importante`: Não altere o nome da variável `StringConnection`, altere somente o conteúdo entre as aspas.
+
+### Dica de como localizar a sua string de conexão
+
+Crie um banco de dados com o nome que você desejar no `SQL SERVER`. Após a criação, siga as intruções desse GIF nesse [link](https://i.imgur.com/itlGlo5.mp4).
+
+## Inicializando a API.
+
+Para iniciar a API você precisará abrir o terminal, execute os seguintes comandos: `cd Delivery`, `cd DeliveryAPI` e por último execute o `dotnet run`.
 
 ## Executando o projeto
 
-Para executar o projeto, basta abrir o terminal, executar o comando `cd delivery` e depois executar o comando `ng serve`. Para executar a API você precisará ter o .NET instalado no seu computador, aperte `F5` no Vs Code que ele executará a API. 
-Obs: Não se esqueça de baixar os pacotes do NODE, para baixar os pacotes basta executar o `cd delivery` e depois `npm i` ou `npm install`.
+Após inicializar sua API, abra um novo terminal e execute `cd Delivery` e `ng serve ou ng s -o`. A aplicação estará no endereço `http://localhost:4200/`.
 
 ## Andamento do projeto
 
@@ -31,6 +44,3 @@ Obs: Não se esqueça de baixar os pacotes do NODE, para baixar os pacotes basta
 
 [] Cadastro de cupons de promoçóes. 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
