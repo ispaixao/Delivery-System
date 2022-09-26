@@ -52,6 +52,9 @@ namespace DeliveryAPI.Migrations.UserDb
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -124,14 +127,14 @@ namespace DeliveryAPI.Migrations.UserDb
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "c3ba5887-33b8-4879-82eb-56004ddae8fc",
+                            ConcurrencyStamp = "f1e94c5d-d03a-4d3b-9c4c-dc99b4ddb2d2",
                             Name = "regular",
                             NormalizedName = "REGULAR"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "85f3a56a-2df9-4b64-8341-ec272b74a930",
+                            ConcurrencyStamp = "10c1cfcd-80b9-47ce-9037-0cccb0ccec99",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });

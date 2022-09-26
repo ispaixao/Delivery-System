@@ -1,12 +1,8 @@
+import { Login } from 'src/app/shared/model/Login';
 import { AutenticacaoService } from './../../core/services/autenticacao/autenticacao.service';
-import { TokenService } from './../../core/services/token/token.service';
-import {
-  AlertService,
-  AlertTypes,
-} from './../../shared/services/alert/alert.service';
+import {AlertService, AlertTypes } from './../../shared/services/alert/alert.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Usuario } from 'src/app/shared/model/Usuario';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
 
@@ -34,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   validar(): void {
-    const usuario = this.loginForm.getRawValue() as Usuario;
+    const usuario = this.loginForm.getRawValue() as Login;
     this.autenticacaoService.autenticar(usuario).subscribe(
       () => {
         this.router.navigate(['restrito']);

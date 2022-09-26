@@ -12,11 +12,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatDateFnsModule} from '@angular/material-date-fns-adapter';
+import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
+
+
 
 
 const MODULES = [
@@ -36,7 +41,10 @@ const MODULES = [
   MatTableModule,
   MatInputModule,
   MatRadioModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatDatepickerModule,
+  MatDateFnsModule,
+  MatNativeDateModule
 
 ];
 
@@ -44,5 +52,8 @@ const MODULES = [
   declarations: [],
   imports: [CommonModule, MODULES],
   exports: [MODULES],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+  ],
 })
 export class AngularMaterialModule {}

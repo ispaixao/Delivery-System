@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace DeliveryAPI_Users.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
+  [Route("usuarios")]
   public class UsuarioController : ControllerBase
   {
     private UsuarioService _service;
@@ -19,7 +19,7 @@ namespace DeliveryAPI_Users.Controllers
       _service = service;
     }
 
-    [HttpPost]
+    [HttpPost, Route("cadastrar")]
     public IActionResult Cadastro(CreateUsuarioDTO dto)
     {
       Result resultado = _service.Cadastro(dto);
@@ -27,12 +27,12 @@ namespace DeliveryAPI_Users.Controllers
       return Ok(resultado);
     }
 
-    [HttpGet]
+    [HttpGet, Route("listar")]
     public IActionResult Buscar()
     {
-      List<CustomIdentityUser> identity = _service.Buscar();
-      if (identity == null) return NotFound();
-      return Ok(identity);
+      List<CustomIdentityUser> usuarios = _service.Buscar();
+      if (usuarios == null) return NotFound();
+      return Ok(usuarios);
     }
 
     [HttpPut]

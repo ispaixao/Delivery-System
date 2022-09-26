@@ -1,7 +1,7 @@
 import { AreaLogadaModule } from './components/area-logada/area-logada.module';
 import { LoginModule } from './components/login/login.module';
 import { CarrinhoComponent } from './components/carrinho/carrinho.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardapioModule } from './components/cardapio/cardapio.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';

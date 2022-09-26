@@ -6,9 +6,20 @@ import { AreaLogadaComponent } from './area-logada.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AreaLogadaRoutingModule } from './area-logada-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CadastroCategoriasComponent } from './cadastros/cadastro-categorias/cadastro-categorias.component';
+import { CadastroProdutosComponent } from './cadastros/cadastro-produtos/cadastro-produtos.component';
+import { CadastroUsuariosComponent } from './cadastros/cadastro-usuarios/cadastro-usuarios.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AreaLogadaComponent],
+  declarations: [
+    AreaLogadaComponent,
+    DashboardComponent,
+    CadastroCategoriasComponent,
+    CadastroProdutosComponent,
+    CadastroUsuariosComponent,
+  ],
   imports: [
     CommonModule,
     NgxBootstrapModule,
@@ -16,6 +27,8 @@ import { AreaLogadaRoutingModule } from './area-logada-routing.module';
     RouterModule,
     AreaLogadaRoutingModule,
     SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   exports: [AreaLogadaComponent],
 })

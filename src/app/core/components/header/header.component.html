@@ -48,7 +48,7 @@
   <header class="header">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-4 align-self-end">
+        <div class="col-6 align-self-center">
           <img
             [routerLink]="['']"
             style="cursor: pointer"
@@ -56,7 +56,26 @@
             alt="logotipo"
           />
         </div>
-        <div class="col-md-4 col-lg-4 col-sm-12 text-center align-self-end">
+        <div class="col-6 text-right align-self-center">
+          <ng-container>
+            <button
+              class="btn2 btn-outline-danger btn-shadow"
+              style="color: black"
+              routerLink="restrito"
+            >
+              ÁREA RESTRITA
+            </button>
+            <button
+              class="btn2 btn-outline-danger btn-shadow"
+              style="color: black; margin-left: 15px"
+              routerLink="restrito"
+              (click)="logout()"
+            >
+              SAIR
+            </button>
+          </ng-container>
+        </div>
+        <div class="col-12 text-center">
           <div class="btn-group">
             <button
               style="border-radius: 5px; margin: 6px"
@@ -68,25 +87,6 @@
               {{ button.nome }}
             </button>
           </div>
-        </div>
-        <div class="col-4 text-right mt-4">
-          <ng-container>
-            <button
-              class="btn2 btn-outline-danger btn-shadow"
-              style="color: black"
-              routerLink="restrito"
-            >
-              ÁREA RESTRITA
-            </button>
-            <button
-              class="btn2 btn-outline-danger btn-shadow"
-              style="color: black; margin-left: 15px;"
-              routerLink="restrito"
-              (click)="logout()"
-            >
-              SAIR
-            </button>
-          </ng-container>
         </div>
       </div>
     </div>

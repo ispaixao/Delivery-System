@@ -1,64 +1,29 @@
-<h4 class="mt-3 text-center">Bem vindo à sua área restrita</h4>
-
-<div class="container-fluid">
+<div class="container-fluid mt-4">
   <div class="row">
-    <div class="col-4">
-      <div class="list-group" id="list-tab" role="tablist" *ngFor="let menu of list_menu" >
-        <button
-          class="list-group-item list-group-item-action"
-          id="list-home-list"
-          style="cursor: pointer"
-          data-toggle="list"
-          role="tab"
-          aria-controls="home"
-          (click)="hide = !hide"
-          [attr.aria-expanded]="!hide"
-          aria-controls="collapseBasica"
-        >
-          {{menu.nome}}
-        </button>
-        <div id="collapseBasic" [collapse]="hide" [isAnimated]="true">
-          <div class="well well-lg card card-block card-header mt-2">
-            <button class="btn btn-outline-secondary">TESTE</button>
-          </div>
-        </div>
-      </div>
+    <div class="col-12 col-md-4 col-lg-2 border-right">
+      <button class="btn btn-primary w-100" routerLink="dashboard">
+        Dashboard
+      </button>
+      <button class="btn btn-primary w-100" [matMenuTriggerFor]="cadastro">
+        Cadastrar
+      </button>
+      <mat-menu #cadastro="matMenu">
+        <button mat-menu-item routerLink="categorias">Categorias</button>
+        <button mat-menu-item routerLink="produtos">Produtos</button>
+        <button mat-menu-item routerLink="usuarios">Usuários</button>
+      </mat-menu>
+      <button class="btn btn-primary w-100" [matMenuTriggerFor]="gerenciamento">
+        Gerenciamento
+      </button>
+      <mat-menu #gerenciamento="matMenu">
+        <button mat-menu-item>Categorias</button>
+        <button mat-menu-item>Produtoss</button>
+        <button mat-menu-item>Promoções</button>
+        <button mat-menu-item>Usuários</button>
+      </mat-menu>
     </div>
-    <div class="col-8">
-      <div class="tab-content" id="nav-tabContent">
-        <div
-          class="tab-pane fade show active"
-          id="list-home"
-          role="tabpanel"
-          aria-labelledby="list-home-list"
-        >
-          ...
-        </div>
-        <div
-          class="tab-pane fade"
-          id="list-profile"
-          role="tabpanel"
-          aria-labelledby="list-profile-list"
-        >
-          ...
-        </div>
-        <div
-          class="tab-pane fade"
-          id="list-messages"
-          role="tabpanel"
-          aria-labelledby="list-messages-list"
-        >
-          ...
-        </div>
-        <div
-          class="tab-pane fade"
-          id="list-settings"
-          role="tabpanel"
-          aria-labelledby="list-settings-list"
-        >
-          ...
-        </div>
-      </div>
+    <div class="col-12 col-lg-10 col-md-8 col- container-fluid">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

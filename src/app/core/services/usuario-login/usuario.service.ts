@@ -2,7 +2,7 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Usuario } from '../../../shared/model/Usuario';
+import { Login } from '../../../shared/model/Login';
 import { TokenService } from '../token/token.service';
 import jwt_decode from 'jwt-decode';
 
@@ -12,7 +12,7 @@ import jwt_decode from 'jwt-decode';
 export class UsuarioService {
   API = environment.API;
 
-  private usuarioSubject = new BehaviorSubject<Usuario>({});
+  private usuarioSubject = new BehaviorSubject<Login>({});
 
   constructor(private tokenService: TokenService) {
     if (this.tokenService.retornaToken()) {
@@ -22,7 +22,7 @@ export class UsuarioService {
 
   private decodificaJWT() {
     const token = this.tokenService.retornaToken();
-    const usuario = jwt_decode(token) as Usuario;
+    const usuario = jwt_decode(token) as Login;
     this.usuarioSubject.next(usuario);
   }
   retornaUsuario() {

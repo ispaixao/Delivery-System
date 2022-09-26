@@ -1,8 +1,8 @@
+import { Login } from 'src/app/shared/model/Login';
 import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UsuarioService } from '../usuario-login/usuario.service';
-import { Usuario } from '../../../shared/model/Usuario';
 import { tap } from 'rxjs';
 const API = environment.API;
 
@@ -15,7 +15,7 @@ export class AutenticacaoService {
     private usuarioService: UsuarioService
   ) {}
 
-  autenticar(usuario: Usuario) {
+  autenticar(usuario: Login) {
     return this.httpClient.post(`${API}/Login`, usuario).pipe(
       tap((res: any) => {
         const authToken = res.token;

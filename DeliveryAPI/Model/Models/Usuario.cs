@@ -13,10 +13,17 @@ namespace DeliveryAPI.Model.Models
     [Required(ErrorMessage = "Campo obrigatório")]
     public string CPF { get; set; }
     [Required(ErrorMessage = "Campo obrigatório")]
-    public DateTime DataNascimento { get; set; }
-
+    public string Nome { get; set; }
     [Required(ErrorMessage = "Campo obrigatório")]
+    public string DataNascimento { get; set; }
 
     public DateTime CriacaoCadastro = DateTime.Now;
+
+    [Required(ErrorMessage = "Campo obrigatório")]
+    public string Telefone { get; set; }
+
+    [Required(ErrorMessage = "Campo obrigatório")]
+    public string Cargo { get; set; }
+
   }
 }

@@ -1,0 +1,122 @@
+<h4 class="text-center">Cadastro de usuário</h4>
+<div class="container-fluid">
+  <form [formGroup]="formUsuario">
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome completo</mat-label>
+        <input
+          matInput
+          placeholder="Nome completo"
+          required
+          formControlName="Nome"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input
+          matInput
+          placeholder="E-mail"
+          required
+          formControlName="Email"
+          required
+        />
+        <mat-hint>E-mail não pode ser duplicado.</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input
+          type="tel"
+          matInput
+          placeholder="(11) 99999-9999"
+          required
+          formControlName="Telefone"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field hintLabel="Sem pontuação" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input
+          matInput
+          #input
+          maxlength="11"
+          placeholder="Número do CPF"
+          required
+          formControlName="CPF"
+        />
+        <mat-hint align="end">{{ input.value.length || 0 }}/11</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Data de nascimento</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="DataNascimento"
+          required
+        />
+        <mat-hint>DD/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input
+          type="password"
+          matInput
+          formControlName="Senha"
+          #senha
+          required
+        />
+        <mat-hint
+          *ngIf="
+            formUsuario.get('senha')?.touched &&
+            formUsuario.get('senha')?.invalid
+          "
+          >Mínimo de 8 caracteres. 1 letra maiúscula e uma minúscula, 1
+          caracteres especial.</mat-hint
+        >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Confirme a senha</mat-label>
+        <input
+          type="password"
+          matInput
+          formControlName="ConfirmSenha"
+          #confirmSenha
+          required
+        />
+        <mat-hint
+          *ngIf="
+            formUsuario.get('Senha')?.value !=
+            formUsuario.get('ConfirmSenha')?.value
+          "
+          >Senha estão divergentes.</mat-hint
+        >
+      </mat-form-field>
+      <mat-radio-group>
+        <h6>Selecione o tipo de perfil do usuário: </h6>
+        <p>
+          <mat-radio-button
+            formControlName="check"
+            value="administrador"
+            >Administrador</mat-radio-button
+          >
+        </p>
+        <mat-radio-button formControlName="check" value="padrao"
+          >Padrão</mat-radio-button
+        >
+      </mat-radio-group>
+    </div>
+  </form>
+  <button
+    class="btn btn-outline-primary w-100 mt-3"
+    type="submit"
+    [disabled]="formUsuario.invalid"
+    (click)="validar()"
+  >
+    CADASTRAR
+  </button>
+</div>

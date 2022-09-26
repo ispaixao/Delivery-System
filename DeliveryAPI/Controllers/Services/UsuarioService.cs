@@ -30,17 +30,19 @@ namespace DeliveryAPI.Controllers.Services
     public Result Cadastro(CreateUsuarioDTO dto)
     {
       var identity = new CustomIdentityUser
-       {
+      {
         UserName = dto.Email,
         Email = dto.Email,
         EmailConfirmed = true,
         CPF = dto.CPF,
         DataNascimento = dto.DataNascimento,
         LockoutEnabled = false,
+        PhoneNumber = dto.Telefone,
+        PhoneNumberConfirmed = true,
       };
 
         
-       var resultadoIdentity = _manager.CreateAsync(identity, dto.Password);
+       var resultadoIdentity = _manager.CreateAsync(identity, dto.Senha);
       
       
       if (resultadoIdentity.Result.Succeeded)
