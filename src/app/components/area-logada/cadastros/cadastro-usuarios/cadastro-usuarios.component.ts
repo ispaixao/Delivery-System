@@ -48,8 +48,6 @@ export class CadastroUsuariosComponent implements OnInit {
 
   validar(): void {
     const usuario = this.formUsuario.getRawValue() as Usuario;
-    this.cadastroService.cadastrar(usuario).subscribe((usuario) => {
-      console.log(usuario);
-    });
+    this.cadastroService.cadastrar(usuario).subscribe();
   }
 }

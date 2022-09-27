@@ -5,7 +5,7 @@ export interface Produto {
   descricao: string;
   quantidade: number;
   foto: string;
-  categoria: number
+  categoria: string;
 }
 
 export type Produtos = Array<Produto>;

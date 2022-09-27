@@ -1,1 +1,38 @@
-<p>cadastro-categorias works!</p>
+<h4 class="text-center">Cadastro de categoria</h4>
+<div class="container-fluid">
+  <form [formGroup]="formCategoria">
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome da categoria</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Nome"
+          required
+          formControlName="titulo"
+        />
+        <mat-hint>Coloque o nome da categoria.</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>URL da imagem</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="URL"
+          required
+          formControlName="url"
+        />
+      </mat-form-field>
+    </div>
+
+    <button
+      class="btn btn-outline-primary w-100 mt-3"
+      type="submit"
+      [disabled]="formCategoria.invalid"
+      (click)="validar()"
+    >
+      CADASTRAR
+    </button>
+  </form>
+</div>

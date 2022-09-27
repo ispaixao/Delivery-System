@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace DeliveryAPI.Model.Models
@@ -9,6 +10,6 @@ namespace DeliveryAPI.Model.Models
     [Required(ErrorMessage = "Campo obrigatório")]
     public string Titulo { get; set; }
     [Required(ErrorMessage = "Campo obrigatório")]
-    public string Foto { get; set; }
+    public string URL { get; set; }
   }
 }

@@ -1,7 +1,7 @@
-export class Categoria {
-  id!: number;
-  titulo!: string;
-  foto: any;
+export interface Categoria {
+  id: number;
+  titulo: string;
+  url: string;
 }
 
 export type Categorias = Array<Categoria>;

@@ -17,7 +17,7 @@ namespace DeliveryAPI.Controllers
             _service = service;
         }
 
-        [Authorize(Roles = "admin")]
+    
         [HttpPost]
         public IActionResult CadastroProduto([FromBody] CreateProdutoDTO dto)
         {

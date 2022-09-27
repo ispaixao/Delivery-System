@@ -1,5 +1,7 @@
 
 
+using System;
+
 namespace DeliveryAPI.Model.DTOs.CategoriaDTO
 {
   public class ReadCategoriaDTO
@@ -7,6 +9,6 @@ namespace DeliveryAPI.Model.DTOs.CategoriaDTO
 
     public int ID { get; set; }
     public string Titulo { get; set; }
-    public string Foto { get; set; }
+    public string URL { get; set; }
   }
 }

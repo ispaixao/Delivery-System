@@ -1,1 +1,73 @@
-<p>cadastro-produtos works!</p>
+<h4 class="text-center">Cadastro de produtos</h4>
+
+<div class="container-fluid">
+  <form [formGroup]="formProdutos">
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Nome do produto</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Produto"
+          required
+          formControlName="titulo"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Valor</mat-label>
+        <input
+          type="number"
+          matInput
+          placeholder="Valor"
+          required
+          formControlName="valor"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Descrição</mat-label>
+        <textarea
+          matInput
+          placeholder="Seja breve"
+          #descricao
+          maxlength="50"
+          formControlName="descricao"
+          required
+        ></textarea>
+        <mat-hint>{{ descricao.value.length }}/50</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Categoria do produto</mat-label>
+        <select matNativeControl required formControlName="categoria">
+          <option label="Selecione"></option>
+          <option *ngFor="let categoria of categorias" value="{{categoria.titulo}}">
+            {{ categoria.titulo }}
+          </option>
+        </select>
+        <mat-error *ngIf="formProdutos.get('categoria')?.hasError('required')">
+          Selecione uma categoria.
+        </mat-error>
+        <mat-hint>Selecione a categoria do produto.</mat-hint>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>URL da foto do produto</mat-label>
+        <input
+          type="url"
+          matInput
+          placeholder="URL"
+          required
+          formControlName="foto"
+        />
+      </mat-form-field>
+    </div>
+  </form>
+  <button
+    class="btn btn-outline-primary w-100 mt-3"
+    type="submit"
+    [disabled]="formProdutos.invalid"
+    (click)="validar()"
+  >
+    CADASTRAR
+  </button>
+</div>

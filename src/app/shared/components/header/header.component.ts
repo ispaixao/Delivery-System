@@ -1,8 +1,8 @@
 import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
 import { Login } from '../../../shared/model/Login';
 import { Menus } from '../../../shared/model/Menu';
-import { CarrinhoService } from './../../services/carrinho/carrinho.service';
 import { Component, OnInit } from '@angular/core';
+import { CarrinhoService } from 'src/app/core/services/carrinho/carrinho.service';
 
 @Component({
   selector: 'app-header',

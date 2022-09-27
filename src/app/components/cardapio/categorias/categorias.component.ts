@@ -15,7 +15,7 @@ import { AlertsComponent } from 'src/app/shared/components/alerts/alerts.compone
   styleUrls: ['./categorias.component.css'],
 })
 export class CategoriasComponent implements OnInit {
-  categorias!: Categorias;
+  categorias!: Categorias
   bsModalRef!: BsModalRef;
 
   constructor(
