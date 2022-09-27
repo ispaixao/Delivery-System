@@ -38,7 +38,7 @@ Após inicializar sua API, abra um novo terminal e execute `cd Delivery` e `ng s
 
 [] Cadastro de produtos.
 
-[] Cadatro de usuários.
+[X] Cadatro de usuários.
 
 [] Cadastro de categorias.
 
