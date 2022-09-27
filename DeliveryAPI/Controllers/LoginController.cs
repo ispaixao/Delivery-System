@@ -1,6 +1,7 @@
 using DeliveryAPI.Controllers.Services;
 using DeliveryAPI.Model.Request;
 using FluentResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

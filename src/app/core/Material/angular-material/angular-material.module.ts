@@ -20,6 +20,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDateFnsModule} from '@angular/material-date-fns-adapter';
 import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -44,7 +46,8 @@ const MODULES = [
   MatSidenavModule,
   MatDatepickerModule,
   MatDateFnsModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatSelectModule
 
 ];
 

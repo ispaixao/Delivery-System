@@ -39,6 +39,7 @@ namespace DeliveryAPI.Controllers.Services
         LockoutEnabled = false,
         PhoneNumber = dto.Telefone,
         PhoneNumberConfirmed = true,
+        Cargo = dto.Cargo,
       };
 
         
@@ -47,7 +48,7 @@ namespace DeliveryAPI.Controllers.Services
       
       if (resultadoIdentity.Result.Succeeded)
       {
-          _manager.AddToRoleAsync(identity, "admin").Wait();
+          _manager.AddToRoleAsync(identity, identity.Cargo).Wait();
           return Result.Ok();
       }
 

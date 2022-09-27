@@ -1,5 +1,10 @@
 import { CadastroUsuarioService } from './../../../../core/services/cadastro-usuario/cadastro-usuario.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { Usuario } from 'src/app/shared/model/Usuario';
@@ -13,13 +18,7 @@ import {
   selector: 'app-cadastro-usuarios',
   templateUrl: './cadastro-usuarios.component.html',
   styleUrls: ['./cadastro-usuarios.component.css'],
-  providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
-    {
-      provide: MAT_CHECKBOX_DEFAULT_OPTIONS,
-      useValue: { clickAction: 'check' } as MatCheckboxDefaultOptions,
-    },
-  ],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
 })
 export class CadastroUsuariosComponent implements OnInit {
   formUsuario!: FormGroup;
@@ -39,8 +38,7 @@ export class CadastroUsuariosComponent implements OnInit {
         DataNascimento: ['', [Validators.required]],
         Senha: ['', [Validators.minLength(8), Validators.required]],
         ConfirmSenha: ['', [Validators.required]],
-        check: ['', Validators.required]
-
+        Cargo: ['', Validators.required],
       },
       {
         validators: [senhaValidator],

@@ -89,6 +89,7 @@
           required
         />
         <mat-hint
+          class="text-danger"
           *ngIf="
             formUsuario.get('Senha')?.value !=
             formUsuario.get('ConfirmSenha')?.value
@@ -96,19 +97,18 @@
           >Senha estão divergentes.</mat-hint
         >
       </mat-form-field>
-      <mat-radio-group>
-        <h6>Selecione o tipo de perfil do usuário: </h6>
-        <p>
-          <mat-radio-button
-            formControlName="check"
-            value="administrador"
-            >Administrador</mat-radio-button
-          >
-        </p>
-        <mat-radio-button formControlName="check" value="padrao"
-          >Padrão</mat-radio-button
-        >
-      </mat-radio-group>
+      <mat-form-field appearance="fill">
+        <mat-label>Perfil de usuário</mat-label>
+        <select matNativeControl required formControlName="Cargo">
+          <option label="Selecione"></option>
+          <option value="admin">Administrador</option>
+          <option value="regular">Padrão</option>
+        </select>
+        <mat-error *ngIf="formUsuario.get('Cargo')?.hasError('required')">
+          Selecione um perfil.
+        </mat-error>
+        <mat-hint>Selecione o perfil de usuário.</mat-hint>
+      </mat-form-field>
     </div>
   </form>
   <button
