@@ -36,11 +36,11 @@ Após inicializar sua API, abra um novo terminal e execute `cd Delivery` e `ng s
 
 [X] Página de administração do sistema.
 
-[] Cadastro de produtos.
+[X] Cadastro de produtos.
 
 [X] Cadatro de usuários.
 
-[] Cadastro de categorias.
+[X] Cadastro de categorias.
 
 [] Cadastro de cupons de promoçóes. 
 
