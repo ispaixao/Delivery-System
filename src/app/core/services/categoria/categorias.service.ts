@@ -1,6 +1,10 @@
+import {
+  AlertService,
+  AlertTypes,
+} from './../../../shared/services/alert/alert.service';
 import { environment } from 'src/environments/environment';
 import { Categoria, Categorias } from '../../../shared/model/Categoria';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -10,7 +14,10 @@ import { Injectable } from '@angular/core';
 export class CategoriasService {
   private API = environment.API;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private alertService: AlertService
+  ) {}
 
   getCategorias(): Observable<Categorias> {
     return this.httpClient.get<Categorias>(`${this.API}/Categoria`);
@@ -20,10 +27,15 @@ export class CategoriasService {
     return this.httpClient.get<Categoria>(`${this.API}/Categoria/${id}`);
   }
 
-  atualizarCategoria(id: number, categoria: Categoria): Observable<Categoria> {
+  atualizarCategoria(categoria: Categoria): Observable<Categoria> {
     return this.httpClient.put<Categoria>(
-      `${this.API}/Categoria/${id}`,
+      `${this.API}/Categoria/${categoria.id}`,
       categoria
     );
+  }
+
+  deletarCategoria(categoria: Categoria): any {
+    return this.httpClient
+      .delete<Categoria>(`${this.API}/Categoria/${categoria.id}`);
   }
 }

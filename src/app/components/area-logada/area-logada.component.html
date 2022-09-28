@@ -18,15 +18,15 @@
         </accordion-group>
         <accordion-group heading="Gerenciamento">
           <button class="btn btn-block border-secondary" routerLink="alterar-categoria">Categorias</button>
-          <button class="btn btn-block border-secondary">Produtos</button>
-          <button class="btn btn-block border-secondary">Promoções</button>
+          <button class="btn btn-block border-secondary" routerLink="alterar-produto">Produtos</button>
           <button class="btn btn-block border-secondary">Usuários</button>
         </accordion-group>
-        <accordion-group heading="Alteração de itens">
+        <accordion-group heading="Listar">
           <button class="btn btn-block border-secondary">Categorias</button>
           <button class="btn btn-block border-secondary">Produtos</button>
-          <button class="btn btn-block border-secondary">Promoções</button>
+          <button class="btn btn-block border-secondary">Usuários</button>
         </accordion-group>
+        <button class="btn btn-outline-info w-100 mt-2" (click)="logout()">SAIR</button>
       </accordion>
     </div>
     <div class="col-12 col-lg-10 col-md-8 col- container-fluid">

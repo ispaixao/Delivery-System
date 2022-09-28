@@ -1,4 +1,4 @@
-import { Produtos } from '../../../shared/model/Produto';
+import { Produto, Produtos } from '../../../shared/model/Produto';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -12,11 +12,28 @@ export class ProdutosService {
 
   constructor(private httpclient: HttpClient) {}
 
-  getProdutos(categoria: string): Observable<Produtos> {
+  getProdutosPorCategoria(categoria: string): Observable<Produtos> {
     return this.httpclient.get<Produtos>(
       `${this.API}/Produto/categoria=${categoria}`
     );
   }
 
+  getProdutos(): Observable<Produtos> {
+    return this.httpclient.get<Produtos>(`${this.API}/Produto`);
+  }
 
+  getProdutoPorId(id: number): Observable<Produto> {
+    return this.httpclient.get<Produto>(`${this.API}/Produto/id/${id}`);
+  }
+
+  deletarProduto(produto: Produto): Observable<Produto> {
+    return this.httpclient.delete<Produto>(`${this.API}/Produto/${produto.id}`);
+  }
+
+  atualizarProduto(produto: Produto): Observable<Produto> {
+    return this.httpclient.put<Produto>(
+      `${this.API}/Produto/${produto.id}`,
+      produto
+    );
+  }
 }

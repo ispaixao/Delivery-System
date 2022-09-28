@@ -1,11 +1,9 @@
-import {
-  AlertService,
-  AlertTypes,
-} from './../../../../../../shared/services/alert/alert.service';
 import { Router } from '@angular/router';
 import { CategoriasService } from 'src/app/core/services/categoria/categorias.service';
-import { Categorias } from 'src/app/shared/model/Categoria';
-import { Component, OnInit } from '@angular/core';
+import { Categoria, Categorias } from 'src/app/shared/model/Categoria';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { relativeTimeThreshold } from 'moment';
+import { AlertService, AlertTypes } from 'src/app/shared/services/alert/alert.service';
 
 @Component({
   selector: 'app-alteracao-categoria',
@@ -49,5 +47,15 @@ export class AlteracaoCategoriaComponent implements OnInit {
       'Não foi possível carregar as informações, tente mais tarde.',
       AlertTypes.DANGER
     );
+  }
+
+  deletar(categoria: Categoria): void {
+    this.categoriaService.deletarCategoria(categoria).subscribe(() => {
+      this.alertService.showAlert(
+        'Categoria excluída com sucesso.',
+        AlertTypes.SUCCESS
+      );
+      this.router.navigate(['restrito']);
+    });
   }
 }

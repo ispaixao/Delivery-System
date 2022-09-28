@@ -1,0 +1,62 @@
+<div class="btnAdicionar">
+  <button
+    class="btn btn-info"
+    matTooltip="Adicionar categoria"
+    (click)="irParaCadastro()"
+    routerLink="/produtos"
+    routerLinkActive="router-link-active"
+  >
+    ADICIONAR
+  </button>
+</div>
+
+<mat-table [dataSource]="produtos" class="mat-elevation-z8">
+  <!-- TITULO Definition -->
+  <ng-container matColumnDef="titulo">
+    <mat-header-cell *matHeaderCellDef> Titulo </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.titulo }} </mat-cell>
+  </ng-container>
+
+  <!-- VALOR Definition -->
+  <ng-container matColumnDef="valor">
+    <mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.valor }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="descricao">
+    <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.descricao }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="categoria">
+    <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.categoria }} </mat-cell>
+  </ng-container>
+
+  <!-- Ação Definition -->
+
+  <ng-container matColumnDef="acao">
+    <mat-header-cell *matHeaderCellDef> Ação </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button
+        mat-icon-button
+        matTooltip="Alterar produto"
+        routerLink="/produtos/{{ row.id }}"
+        routerLinkActive="router-link-active"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Deletar produto"
+        (click)="deletar(row); $event.stopPropagation()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: colunas"></mat-row>
+</mat-table>

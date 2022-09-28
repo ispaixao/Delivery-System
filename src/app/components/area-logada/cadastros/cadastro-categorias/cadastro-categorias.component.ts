@@ -43,6 +43,7 @@ export class CadastroCategoriasComponent implements OnInit {
     const categoria = this.formCategoria.getRawValue() as Categoria;
     this.cadastroCategoriaService.cadastrar(categoria).subscribe();
   }
+  
 
   getCategoriaPorId(): void {
     const paramId = this.activatedRoute.snapshot.paramMap.get('id');
@@ -60,23 +61,16 @@ export class CadastroCategoriasComponent implements OnInit {
     }
   }
 
-  atualizacao(): boolean {
-    const paramId = this.activatedRoute.snapshot.paramMap.get('id');
+  atualizacao(): void {
 
-    if (paramId !== null) {
-      const id = Number(paramId);
+    const categoria = this.formCategoria.getRawValue() as Categoria;
 
-      this.categoriaService
-        .atualizarCategoria(id, this.categoria)
-        .subscribe(() => {
-          this.router.navigate['restrito'];
-          this.alertService.showAlert(
-            'Categoria atualizada com sucesso!',
-            AlertTypes.SUCCESS
-          );
-        });
-      return true;
-    }
-    return false;
+    this.categoriaService.atualizarCategoria(categoria).subscribe(() => {
+      this.router.navigate['restrito'];
+      this.alertService.showAlert(
+        'Categoria atualizada com sucesso!',
+        AlertTypes.SUCCESS
+      );
+    });
   }
 }

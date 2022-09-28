@@ -1,8 +1,12 @@
-<h4 class="text-center">Cadastro de produtos</h4>
-
+<h4 class="text-center">{{ editProduto ? "Atualizando" : "Novo" }} Produto</h4>
 <div class="container-fluid">
   <form [formGroup]="formProdutos">
     <div class="row">
+      <mat-form-field *ngIf="editProduto">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" />
+      </mat-form-field>
+
       <mat-form-field>
         <mat-label>Nome do produto</mat-label>
         <input
@@ -41,7 +45,10 @@
         <mat-label>Categoria do produto</mat-label>
         <select matNativeControl required formControlName="categoria">
           <option label="Selecione"></option>
-          <option *ngFor="let categoria of categorias" value="{{categoria.titulo}}">
+          <option
+            *ngFor="let categoria of categorias"
+            value="{{ categoria.titulo }}"
+          >
             {{ categoria.titulo }}
           </option>
         </select>
@@ -65,6 +72,17 @@
   <button
     class="btn btn-outline-primary w-100 mt-3"
     type="submit"
+    [disabled]="formProdutos.invalid"
+    *ngIf="editProduto"
+    (click)="atualizacao()"
+  >
+    ATUALIZAR
+  </button>
+
+  <button
+    class="btn btn-outline-primary w-100 mt-3"
+    type="submit"
+    *ngIf="!editProduto"
     [disabled]="formProdutos.invalid"
     (click)="validar()"
   >
