@@ -1,26 +1,33 @@
 <div class="container-fluid mt-4">
   <div class="row">
     <div class="col-12 col-md-4 col-lg-2 border-right">
-      <button class="btn btn-primary w-100" routerLink="dashboard">
-        Dashboard
-      </button>
-      <button class="btn btn-primary w-100" [matMenuTriggerFor]="cadastro">
-        Cadastrar
-      </button>
-      <mat-menu #cadastro="matMenu">
-        <button mat-menu-item routerLink="categorias">Categorias</button>
-        <button mat-menu-item routerLink="produtos">Produtos</button>
-        <button mat-menu-item routerLink="usuarios">Usuários</button>
-      </mat-menu>
-      <button class="btn btn-primary w-100" [matMenuTriggerFor]="gerenciamento">
-        Gerenciamento
-      </button>
-      <mat-menu #gerenciamento="matMenu">
-        <button mat-menu-item>Categorias</button>
-        <button mat-menu-item>Produtoss</button>
-        <button mat-menu-item>Promoções</button>
-        <button mat-menu-item>Usuários</button>
-      </mat-menu>
+      <accordion class="text-center" [isAnimated]="true">
+        <accordion-group heading="Cadastrar">
+          <button
+            class="btn btn-block border-secondary"
+            routerLink="categorias"
+          >
+            Categorias
+          </button>
+          <button class="btn btn-block border-secondary" routerLink="produtos">
+            Produtos
+          </button>
+          <button class="btn btn-block border-secondary" routerLink="usuarios">
+            Usuários
+          </button>
+        </accordion-group>
+        <accordion-group heading="Gerenciamento">
+          <button class="btn btn-block border-secondary" routerLink="alterar-categoria">Categorias</button>
+          <button class="btn btn-block border-secondary">Produtos</button>
+          <button class="btn btn-block border-secondary">Promoções</button>
+          <button class="btn btn-block border-secondary">Usuários</button>
+        </accordion-group>
+        <accordion-group heading="Alteração de itens">
+          <button class="btn btn-block border-secondary">Categorias</button>
+          <button class="btn btn-block border-secondary">Produtos</button>
+          <button class="btn btn-block border-secondary">Promoções</button>
+        </accordion-group>
+      </accordion>
     </div>
     <div class="col-12 col-lg-10 col-md-8 col- container-fluid">
       <router-outlet></router-outlet>

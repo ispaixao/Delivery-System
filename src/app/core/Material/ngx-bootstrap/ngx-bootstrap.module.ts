@@ -6,12 +6,15 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+
 const MODULES = [
   TooltipModule,
   ModalModule,
   CarouselModule,
   BsDropdownModule,
   CollapseModule,
+  AccordionModule
 ];
 
 @NgModule({

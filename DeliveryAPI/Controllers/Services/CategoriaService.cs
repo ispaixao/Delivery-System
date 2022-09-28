@@ -58,7 +58,7 @@ namespace DeliveryAPI.Controllers.Services
       {
         return Result.Fail("Categoria não encontrada");
       }
-      _mapper.Map(categoria, dto);
+      _mapper.Map(dto, categoria);
       _context.Categorias.Update(categoria);
       _context.SaveChanges();
       return Result.Ok();

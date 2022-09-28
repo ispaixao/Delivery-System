@@ -1,7 +1,14 @@
-<h4 class="text-center">Cadastro de categoria</h4>
+<h4 class="text-center">
+  {{ editCategoria ? "Atualizando" : "Nova" }} Categoria
+</h4>
 <div class="container-fluid">
   <form [formGroup]="formCategoria">
     <div class="row">
+      <mat-form-field *ngIf="editCategoria">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" />
+      </mat-form-field>
+
       <mat-form-field appearance="fill">
         <mat-label>Nome da categoria</mat-label>
         <input
@@ -30,6 +37,17 @@
       class="btn btn-outline-primary w-100 mt-3"
       type="submit"
       [disabled]="formCategoria.invalid"
+      *ngIf="editCategoria"
+      (click)="atualizacao()"
+    >
+      ATUALIZAR
+    </button>
+
+    <button
+      class="btn btn-outline-primary w-100 mt-3"
+      type="submit"
+      [disabled]="formCategoria.invalid"
+      *ngIf="!editCategoria"
       (click)="validar()"
     >
       CADASTRAR

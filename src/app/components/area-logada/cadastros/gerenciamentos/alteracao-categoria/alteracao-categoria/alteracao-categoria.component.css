@@ -1,0 +1,25 @@
+.mat-column-titulo{
+  max-width: 300px;
+  text-align: center;
+}
+
+
+.mat-column-acao{
+  max-width: 100px;
+  text-align: center;
+}
+
+mat-row:hover {
+  font-weight: bold;
+  background-color: whitesmoke;
+
+  transition: 0.2s;
+
+}
+
+.btn {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+

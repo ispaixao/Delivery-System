@@ -1,0 +1,48 @@
+<div class="btn">
+  <button
+    class="btn btn-info"
+    matTooltip="Adicionar categoria"
+    (click)="irParaCadastro()"
+    routerLink="/categorias/"
+    routerLinkActive="router-link-active"
+
+  >
+    ADICIONAR
+  </button>
+</div>
+
+<mat-table [dataSource]="categorias" class="mat-elevation-z8">
+  <!-- ID Definition -->
+  <ng-container matColumnDef="titulo">
+    <mat-header-cell *matHeaderCellDef> Titulo </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.titulo }} </mat-cell>
+  </ng-container>
+
+  <!-- NOME Definition -->
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef> URL da Imagem </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.url }} </mat-cell>
+  </ng-container>
+
+  <!-- Ação Definition -->
+  <!--$event.stopPropagation = QUANDO EU CLICAR NO BOTÃO, NADA
+  QUE ESTEJA FORA DO BUTTON VAI SER EXECUTADO -->
+  <ng-container matColumnDef="acao">
+    <mat-header-cell *matHeaderCellDef> Ação </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button matTooltip="Alterar categoria">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
+  <mat-row
+    routerLink="/categorias/{{row.id}}"
+    routerLinkActive="router-link-active"
+    *matRowDef="let row; columns: colunas"
+  ></mat-row>
+</mat-table>
+
+<!-- (click)="deleteHero(row); $event.stopPropagation()" -->
