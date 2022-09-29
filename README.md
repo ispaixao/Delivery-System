@@ -42,5 +42,3 @@ Após inicializar sua API, abra um novo terminal e execute `cd Delivery` e `ng s
 
 [X] Cadastro de categorias.
 
-[] Cadastro de cupons de promoçóes. 
-
