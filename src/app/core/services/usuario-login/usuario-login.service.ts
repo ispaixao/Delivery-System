@@ -9,7 +9,7 @@ import jwt_decode from 'jwt-decode';
 @Injectable({
   providedIn: 'root',
 })
-export class UsuarioService {
+export class UsuarioLoginService {
   API = environment.API;
 
   private usuarioSubject = new BehaviorSubject<Login>({});

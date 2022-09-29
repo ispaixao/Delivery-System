@@ -11,7 +11,13 @@ namespace DeliveryAPI.Model.DTOs.UsuarioDTO
     [Required(ErrorMessage = "Campo obrigatório")]
     public string CPF { get; set; }
     [Required(ErrorMessage = "Campo obrigatório")]
+    public string Cargo { get; set; }
+
+    [Required(ErrorMessage = "Campo obrigatório")]
     public string Nome { get; set; }
+    [Required(ErrorMessage = "Campo obrigatório")]
+    public string Telefone { get; set; }
+
     [Required(ErrorMessage = "Campo obrigatório")]
     public DateTime DataNascimento { get; set; }
   }

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { UsuarioService } from './usuario.service';
 
-describe('UsuarioService', () => {
+describe('CadastroUsuarioService', () => {
   let service: UsuarioService;
 
   beforeEach(() => {

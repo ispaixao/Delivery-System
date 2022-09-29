@@ -13,6 +13,7 @@ import { CadastroUsuariosComponent } from './cadastros/cadastro-usuarios/cadastr
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlteracaoCategoriaComponent } from './gerenciamentos/alteracao-categoria/alteracao-categoria.component';
 import { AlteracaoProdutosComponent } from './gerenciamentos/alteracao-produtos/alteracao-produtos.component';
+import { AlteracaoUsuariosComponent } from './gerenciamentos/alteracao-usuarios/alteracao-usuarios/alteracao-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AlteracaoProdutosComponent } from './gerenciamentos/alteracao-produtos/
     CadastroUsuariosComponent,
     AlteracaoCategoriaComponent,
     AlteracaoProdutosComponent,
+    AlteracaoUsuariosComponent
   ],
   imports: [
     CommonModule,

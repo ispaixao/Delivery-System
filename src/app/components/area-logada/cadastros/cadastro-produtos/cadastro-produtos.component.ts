@@ -6,7 +6,6 @@ import { CategoriasService } from './../../../../core/services/categoria/categor
 import { Categorias } from 'src/app/shared/model/Categoria';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { CadastroUsuarioService } from 'src/app/core/services/cadastro-usuario/cadastro-usuario.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

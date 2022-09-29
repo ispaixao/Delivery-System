@@ -9,18 +9,23 @@ namespace DeliveryAPI.Model.Models
     [Key]
     public int ID { get; set; }
     [Required(ErrorMessage = "Campo obrigatório")]
-    public string Email { get; set; }
-    [Required(ErrorMessage = "Campo obrigatório")]
-    public string CPF { get; set; }
-    [Required(ErrorMessage = "Campo obrigatório")]
     public string Nome { get; set; }
     [Required(ErrorMessage = "Campo obrigatório")]
-    public string DataNascimento { get; set; }
-
-    public DateTime CriacaoCadastro = DateTime.Now;
+    public string Email { get; set; }
 
     [Required(ErrorMessage = "Campo obrigatório")]
     public string Telefone { get; set; }
+
+
+    [Required(ErrorMessage = "Campo obrigatório")]
+    public string CPF { get; set; }
+
+    [Required(ErrorMessage = "Campo obrigatório"), DataType(DataType.Date)]
+    public string DataNascimento { get; set; }
+    [Required(ErrorMessage = "Campo obrigatório")]
+
+    public DateTime CriacaoCadastro = DateTime.Now;
+
 
     [Required(ErrorMessage = "Campo obrigatório")]
     public string Cargo { get; set; }

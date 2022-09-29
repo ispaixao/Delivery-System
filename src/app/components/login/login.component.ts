@@ -1,10 +1,10 @@
+import { UsuarioLoginService } from './../../core/services/usuario-login/usuario-login.service';
 import { Login } from 'src/app/shared/model/Login';
 import { AutenticacaoService } from './../../core/services/autenticacao/autenticacao.service';
 import {AlertService, AlertTypes } from './../../shared/services/alert/alert.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private usuarioService: UsuarioService,
+    private usuarioLoginService: UsuarioLoginService,
     private router: Router,
     private alertService: AlertService,
     private autenticacaoService: AutenticacaoService

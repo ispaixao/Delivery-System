@@ -1,4 +1,4 @@
-import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
+import { UsuarioLoginService } from './../../../core/services/usuario-login/usuario-login.service';
 import { Login } from '../../../shared/model/Login';
 import { Menus } from '../../../shared/model/Menu';
 import { Component, OnInit } from '@angular/core';
@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private carrinhoService: CarrinhoService,
-    private usuarioService: UsuarioService
+    private usuarioLoginService: UsuarioLoginService
   ) {}
   ngOnInit(): void {
     this.getCarrinho();
@@ -51,13 +51,13 @@ export class HeaderComponent implements OnInit {
   }
 
   logado(): boolean {
-    if (this.usuarioService.logado() != null) {
+    if (this.usuarioLoginService.logado() != null) {
       return true;
     }
     return false;
   }
 
-  logout(): void{
-    this.usuarioService.logout();
+  logout(): void {
+    this.usuarioLoginService.logout();
   }
 }

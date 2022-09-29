@@ -1,4 +1,8 @@
-import { CadastroUsuarioService } from './../../../../core/services/cadastro-usuario/cadastro-usuario.service';
+import {
+  AlertService,
+  AlertTypes,
+} from './../../../../shared/services/alert/alert.service';
+import { UsuarioService } from '../../../../core/services/usuario/usuario.service';
 import {
   FormBuilder,
   FormGroup,
@@ -9,10 +13,7 @@ import { Component, OnInit } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { Usuario } from 'src/app/shared/model/Usuario';
 import { senhaValidator } from './validators/senha.validators';
-import {
-  MatCheckboxDefaultOptions,
-  MAT_CHECKBOX_DEFAULT_OPTIONS,
-} from '@angular/material/checkbox';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-usuarios',
@@ -21,33 +22,37 @@ import {
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
 })
 export class CadastroUsuariosComponent implements OnInit {
-  formUsuario!: FormGroup;
+  editUsuario = false;
+  usuario!: Usuario;
+
+  formUsuario = this.formBuilder.group({
+    Nome: ['', [Validators.required]],
+    Email: ['', [Validators.email, Validators.required]],
+    Telefone: ['', Validators.required],
+    CPF: ['', [Validators.minLength(11), Validators.required]],
+    dataNascimento: ['', [Validators.required]],
+    Senha: ['', [Validators.minLength(8), Validators.required], senhaValidator],
+    ConfirmSenha: ['', [Validators.required], senhaValidator],
+    Cargo: ['', Validators.required],
+  });
 
   constructor(
     private formBuilder: FormBuilder,
-    private cadastroService: CadastroUsuarioService
+    private usuarioService: UsuarioService,
+    private alertService: AlertService,
+    private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.formUsuario = this.formBuilder.group(
-      {
-        Nome: ['', [Validators.required]],
-        Email: ['', [Validators.email, Validators.required]],
-        Telefone: ['', Validators.required],
-        CPF: ['', [Validators.minLength(11), Validators.required]],
-        DataNascimento: ['', [Validators.required]],
-        Senha: ['', [Validators.minLength(8), Validators.required]],
-        ConfirmSenha: ['', [Validators.required]],
-        Cargo: ['', Validators.required],
-      },
-      {
-        validators: [senhaValidator],
-      }
-    );
-  }
+  ngOnInit(): void {}
 
   validar(): void {
     const usuario = this.formUsuario.getRawValue() as Usuario;
-    this.cadastroService.cadastrar(usuario).subscribe();
+    this.usuarioService.cadastrar(usuario).subscribe(() => {
+      this.alertService.showAlert(
+        'Usuário cadastrado com sucesso.',
+        AlertTypes.SUCCESS
+      );
+      this.router.navigate(['restrito']);
+    });
   }
 }

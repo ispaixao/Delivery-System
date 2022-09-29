@@ -1,5 +1,5 @@
+import { UsuarioLoginService } from './../../core/services/usuario-login/usuario-login.service';
 import { Router } from '@angular/router';
-import { UsuarioService } from 'src/app/core/services/usuario-login/usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./area-logada.component.css'],
 })
 export class AreaLogadaComponent implements OnInit {
-  constructor(private usuarioService: UsuarioService, private router: Router) {}
+  constructor(private usuarioLoginService: UsuarioLoginService, private router: Router) {}
 
   ngOnInit(): void {}
 
   logout(): void {
-    this.usuarioService.logout();
+    this.usuarioLoginService.logout();
     this.router.navigate(['']);
   }
 }

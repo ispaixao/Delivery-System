@@ -1,0 +1,58 @@
+<div class="btnAdicionar">
+  <button
+    class="btn btn-info"
+    matTooltip="Adicionar categoria"
+    routerLink="/usuarios"
+    routerLinkActive="router-link-active"
+  >
+    ADICIONAR
+  </button>
+</div>
+
+<mat-table [dataSource]="usuarios" class="mat-elevation-z8">
+  <!-- NOME Definition -->
+  <ng-container matColumnDef="nome">
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.nome }} </mat-cell>
+  </ng-container>
+
+  <!-- EMAIL Definition -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.email }} </mat-cell>
+  </ng-container>
+
+  <!--CPF Definition -->
+
+  <ng-container matColumnDef="cpf">
+    <mat-header-cell *matHeaderCellDef> CPF </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.cpf }} </mat-cell>
+  </ng-container>
+
+
+  <!-- CARGO Definition -->
+
+  <ng-container matColumnDef="telefone">
+    <mat-header-cell *matHeaderCellDef> Telefone </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.telefone }} </mat-cell>
+  </ng-container>
+
+  <!-- Ação Definition -->
+
+  <ng-container matColumnDef="acao">
+    <mat-header-cell *matHeaderCellDef> Ação </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button
+        mat-icon-button
+        matTooltip="Deletar usuário"
+        (click)="deletar(row); $event.stopPropagation()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: colunas"></mat-row>
+</mat-table>

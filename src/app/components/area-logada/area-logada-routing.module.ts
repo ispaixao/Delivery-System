@@ -1,3 +1,4 @@
+import { AlteracaoUsuariosComponent } from './gerenciamentos/alteracao-usuarios/alteracao-usuarios/alteracao-usuarios.component';
 import { AlteracaoProdutosComponent } from './gerenciamentos/alteracao-produtos/alteracao-produtos.component';
 import { CadastroUsuariosComponent } from './cadastros/cadastro-usuarios/cadastro-usuarios.component';
 import { CadastroProdutosComponent } from './cadastros/cadastro-produtos/cadastro-produtos.component';
@@ -39,12 +40,20 @@ const routes: Routes = [
         component: CadastroUsuariosComponent,
       },
       {
+        path: 'usuarios/:id',
+        component: CadastroUsuariosComponent,
+      },
+      {
         path: 'alterar-categoria',
         component: AlteracaoCategoriaComponent
       },
       {
         path: 'alterar-produto',
         component: AlteracaoProdutosComponent
+      },
+      {
+        path: 'alterar-usuario',
+        component: AlteracaoUsuariosComponent
       },
     ],
     canLoad: [AreaLogadaGuard],

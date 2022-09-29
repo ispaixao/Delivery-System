@@ -1,7 +1,8 @@
-<h4 class="text-center">Cadastro de usuário</h4>
+<h4 class="text-center">Novo Usuário</h4>
 <div class="container-fluid">
   <form [formGroup]="formUsuario">
     <div class="row">
+
       <mat-form-field appearance="fill">
         <mat-label>Nome completo</mat-label>
         <input
@@ -55,7 +56,7 @@
         <input
           matInput
           [matDatepicker]="picker"
-          formControlName="DataNascimento"
+          formControlName="dataNascimento"
           required
         />
         <mat-hint>DD/MM/AAAA</mat-hint>

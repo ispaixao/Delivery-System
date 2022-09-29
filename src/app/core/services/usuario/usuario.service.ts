@@ -1,3 +1,4 @@
+import { Usuarios } from 'src/app/shared/model/Usuario';
 import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../../../shared/model/Usuario';
@@ -8,7 +9,7 @@ const API = environment.API;
 @Injectable({
   providedIn: 'root',
 })
-export class CadastroUsuarioService {
+export class UsuarioService {
 
 
 
@@ -17,7 +18,19 @@ export class CadastroUsuarioService {
   cadastrar(usuario: Usuario){
 
     return this.httpClient.post(`${API}/usuarios/cadastrar`, usuario);
-
-
   }
+
+
+  deletar(usuario: Usuario){
+    return this.httpClient.delete<Usuario>(`${API}/usuarios?id=${usuario.id}`);
+  }
+
+  getUsuarios(): Observable<Usuarios>{
+    return this.httpClient.get<Usuarios>(`${API}/usuarios/listar`)
+  }
+
+  getUsuarioPorId(id: number): Observable<Usuario>{
+    return this.httpClient.get<Usuario>(`${API}/usuarios/listar/id=${id}`);
+  }
+
 }

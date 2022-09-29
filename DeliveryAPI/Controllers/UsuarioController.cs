@@ -35,10 +35,27 @@ namespace DeliveryAPI_Users.Controllers
       return Ok(usuarios);
     }
 
+    [HttpGet, Route("listar/id={id}")]
+    public IActionResult BuscarPorId(int id)
+    {
+      ReadUsuarioDTO usuario = _service.BuscarPorId(id);
+      if (usuario == null) return NotFound();
+      return Ok(usuario);
+    }
+
     [HttpPut]
     public IActionResult Atualizar([FromBody] UpdateUsuarioDTO dto, int id)
     {
       var usuario = _service.Atualizar(dto, id);
+      if (usuario == null) return NotFound();
+      return NoContent();
+    }
+
+
+    [HttpDelete]
+    public IActionResult Deletar(int id)
+    {
+      var usuario = _service.Deletar(id);
       if (usuario == null) return NotFound();
       return NoContent();
     }

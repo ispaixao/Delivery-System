@@ -37,7 +37,8 @@ namespace DeliveryAPI.Controllers.Services
         CPF = dto.CPF,
         DataNascimento = dto.DataNascimento,
         LockoutEnabled = false,
-        PhoneNumber = dto.Telefone,
+        Nome = dto.Nome,
+        Telefone = dto.Telefone,
         PhoneNumberConfirmed = true,
         Cargo = dto.Cargo,
       };
@@ -67,6 +68,16 @@ namespace DeliveryAPI.Controllers.Services
       return usuarios;
     }
 
+    public ReadUsuarioDTO BuscarPorId(int id)
+    {
+      var usuario = _manager.Users.FirstOrDefault(usuario => usuario.Id == id);
+      ReadUsuarioDTO dto = _mapper.Map<ReadUsuarioDTO>(usuario);
+      if (usuario == null) return null;
+
+
+      return _mapper.Map<ReadUsuarioDTO>(dto);
+    }
+
     public Result Atualizar(UpdateUsuarioDTO dto, int id)
     {
       var usuario = _manager.Users.FirstOrDefault(usuario => usuario.Id == id);
@@ -74,10 +85,18 @@ namespace DeliveryAPI.Controllers.Services
 
       _mapper.Map(dto, usuario);
       _manager.UpdateAsync(usuario);
-      _context.SaveChanges();
       return Result.Ok();
     }
 
+
+    public Result Deletar(int id)
+    {
+      var usuario = _manager.Users.FirstOrDefault(usuario => usuario.Id == id);
+      if (usuario == null) return null;
+
+      _manager.DeleteAsync(usuario);
+      return Result.Ok();
+    }
 
 
   }
