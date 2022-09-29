@@ -12,13 +12,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './core/Material/angular-material/angular-material.module';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { CommonModule } from '@angular/common';
+import { FinalizarPedidoComponent } from './components/carrinho/finalizar/finalizar-pedido/finalizar-pedido/finalizar-pedido.component';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { CommonModule } from '@angular/common';
     FinalizarComponent,
     LocalizacaoComponent,
     ContatoComponent,
+    FinalizarPedidoComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { CommonModule } from '@angular/common';
     LoginModule,
     AreaLogadaModule,
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

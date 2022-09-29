@@ -7,12 +7,22 @@ import { NgxBootstrapModule } from './../core/Material/ngx-bootstrap/ngx-bootstr
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlertsComponent } from './components/alerts/alerts.component';
-const COMPONENTS = [AlertsComponent, FooterComponent, HeaderComponent];
+import { LoadingComponent } from './components/loading/loading.component';
+import { LoadingInterceptor } from '../core/interceptors/loading.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+const COMPONENTS = [AlertsComponent, FooterComponent, HeaderComponent, LoadingComponent];
 const MODULES = [NgxBootstrapModule, AngularMaterialModule, RouterModule, CoreModule];
 
 @NgModule({
-  declarations: [COMPONENTS],
+  declarations: [COMPONENTS, LoadingComponent],
   imports: [CommonModule, MODULES],
   exports: [COMPONENTS, MODULES],
+  providers:[
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class SharedModule {}
