@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { ModalService } from './../../shared/services/modal/modal.service';
-import { CarrinhoService } from './../../core/services/carrinho/carrinho.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Produto, Produtos } from 'src/app/shared/model/Produto';
+import { CarrinhoService } from 'src/app/core/services/carrinho/carrinho.service';
+import { ModalService } from 'src/app/shared/services/modal/modal.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -17,8 +17,6 @@ export class CarrinhoComponent implements OnInit {
 
   constructor(
     private carrinhoService: CarrinhoService,
-    private modalService: ModalService,
-    private router: Router
   ) {}
 
   ngOnInit(): void {

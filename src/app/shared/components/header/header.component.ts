@@ -34,6 +34,11 @@ export class HeaderComponent implements OnInit {
       type: 'btn-primary',
       router: '/contato',
     },
+    {
+      nome: 'SOBRE NÓS',
+      type: 'btn-primary',
+      router: '/sobre-nos',
+    },
   ];
 
   constructor(

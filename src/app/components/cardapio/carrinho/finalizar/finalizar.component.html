@@ -119,11 +119,31 @@
         <button
           class="btn btn-outline-success col-12"
           [disabled]="formFinalizacao.invalid"
+          routerLink="/finalizado"
         >
           CONFIRMAR
         </button>
-        <button class="btn btn-outline-danger col-12">CANCELAR</button>
+        <button class="btn btn-outline-danger col-12" (click)="show()" >CANCELAR</button>
       </div>
     </div>
   </form>
 </div>
+<ng-template #modal>
+  <div class="modal-body text-center">
+    <p>Deseja cancelar o pedido?</p>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="cancelarPedido()"
+    >
+      Sim
+    </button>
+    <button
+      type="button"
+      class="btn btn-default"
+      (click)="hide()"
+    >
+      Não
+    </button>
+  </div>
+</ng-template>

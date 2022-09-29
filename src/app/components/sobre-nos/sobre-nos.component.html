@@ -1,0 +1,42 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <h2 class="m-3">Burguer Foods</h2>
+  <p>
+    O estabelecimento mais bem avaliado nas plataformas de delivery, trabalhamos
+    para fazer você feliz, a felicidade do cliente é o nosso sucesso, desde 2000
+    fazendo as pessoas felizes.
+  </p>
+
+  <h3>Sobre nós</h3>
+  <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the
+    1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book. It has survived not only five centuries, but also
+    the leap into electronic typesetting, remaining essentially unchanged. It
+    was popularised in the 1960s with the release of Letraset sheets containing
+    Lorem Ipsum passages, and more recently with desktop publishing software
+    like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
+  <h4>Missão</h4>
+  <p>
+    Servir refeições de qualidade, tendo em vista a excelência em variedades e
+    higiene, em um ambiente agradável, com estrutura de ponta e profissionais
+    capacitados a prestar o melhor atendimento.
+  </p>
+
+  <h4>Visão</h4>
+  <p>
+    Ser uma empresa reconhecida por sua sustentabilidade, fortalecendo nossa
+    reputação de servirmos produtos de qualidade e excelência em nosso
+    atendimento, buscando superar as expectativas dos clientes, para que os
+    mesmos se sintam queridos e se identifiquem com nossos valores.
+  </p>
+
+  <h4>Valores</h4>
+  <mat-list fxLayout="row" fxLayout.xs="column">
+    <mat-list-item *ngFor="let valor of valores">
+      <mat-icon mat-list-icon>done</mat-icon>
+      <div mat-line class="demo-2">{{ valor }}</div>
+    </mat-list-item>
+  </mat-list>
+</div>

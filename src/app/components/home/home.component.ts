@@ -7,14 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  valor!: string;
-
-  valores: string[] = [
-    'Trabalho em equipe',
-    'Agilidade e qualidade',
-    'Responsabilidade ambiental',
-  ];
-
   constructor() { }
 
   ngOnInit(): void {

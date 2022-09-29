@@ -1,6 +1,5 @@
 import { AreaLogadaModule } from './components/area-logada/area-logada.module';
 import { LoginModule } from './components/login/login.module';
-import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardapioModule } from './components/cardapio/cardapio.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -12,24 +11,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './core/Material/angular-material/angular-material.module';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
 import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { CommonModule } from '@angular/common';
-import { FinalizarPedidoComponent } from './components/carrinho/finalizar/finalizar-pedido/finalizar-pedido/finalizar-pedido.component';
-import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { SobreNosComponent } from './components/sobre-nos/sobre-nos.component';
+import { NgxBootstrapModule } from './core/Material/ngx-bootstrap/ngx-bootstrap.module';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CarrinhoComponent,
-    FinalizarComponent,
     LocalizacaoComponent,
     ContatoComponent,
-    FinalizarPedidoComponent,
+    SobreNosComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +43,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     ReactiveFormsModule,
     LoginModule,
     AreaLogadaModule,
+    NgxBootstrapModule
   ],
 
   bootstrap: [AppComponent],

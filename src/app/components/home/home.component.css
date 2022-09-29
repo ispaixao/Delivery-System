@@ -1,10 +1,10 @@
-.home-img{
-
-  width: 30%;
-  border-radius: 10px;
-  margin: 5px;
+.carousel{
+  text-align: center;
 }
 
-p{
-  max-width: 60%;
+img{
+  width: 600px;
+  height: 500px;
+  border-radius: 2rem;
+
 }

@@ -1,18 +1,17 @@
+import { SobreNosComponent } from './components/sobre-nos/sobre-nos.component';
 import { LoginGuard } from './components/login/login.guard';
 import { AreaLogadaGuard } from './components/area-logada/area-logada.guard';
-import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { ContatoComponent } from './components/contato/contato.component';
-import { FinalizarComponent } from './components/carrinho/finalizar/finalizar.component';
-import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { LocalizacaoComponent } from './components/localizacao/localizacao.component';;
+import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    data: {title: 'Burguer Foods'},
     pathMatch: 'full',
   },
 
@@ -24,14 +23,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'carrinho',
-    component: CarrinhoComponent,
-  },
-  {
-    path: 'finalizar',
-    component: FinalizarComponent,
-  },
-  {
     path: 'localizacao',
     component: LocalizacaoComponent,
   },
@@ -40,16 +31,22 @@ const routes: Routes = [
     component: ContatoComponent,
   },
   {
+    path: 'sobre-nos',
+    component: SobreNosComponent,
+  },
+  {
     path: 'login',
     loadChildren: () =>
       import('./components/login/login.module').then((m) => m.LoginModule),
-      canLoad: [LoginGuard]
+    canLoad: [LoginGuard],
   },
   {
     path: 'restrito',
     loadChildren: () =>
-      import('./components/area-logada/area-logada.module').then((m) => m.AreaLogadaModule),
-      canLoad: [AreaLogadaGuard]
+      import('./components/area-logada/area-logada.module').then(
+        (m) => m.AreaLogadaModule
+      ),
+    canLoad: [AreaLogadaGuard],
   },
 ];
 
