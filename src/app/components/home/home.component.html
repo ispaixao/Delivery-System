@@ -1,17 +1,41 @@
-<h4 class="mt-4 mb-2 text-center">Promoções</h4>
+<h4 class="mt-4 mb-2 text-center">Confira Promoções</h4>
+
 <div class="container text-center mb-5">
-  <carousel [isAnimated]="true">
-    <slide>
-      <img src="assets/Promoções/promocao1.jpg" alt="first slide" />
-    </slide>
-    <slide>
-      <img src="assets/Promoções/promocao2.jpg" alt="second slide" />
-    </slide>
-    <slide>
-      <img src="assets/Promoções/promocao3.jpg" alt="third slide" />
-    </slide>
-    <slide>
-      <img src="assets/Promoções/promocao4.jpg" alt="third slide" />
-    </slide>
-  </carousel>
+  <div class="row">
+    <div class="offset-3 col-6 offset-3 text-center">
+      <carousel [isAnimated]="true">
+        <slide>
+          <img src="assets/Promoções/promocao1.jpg" alt="first slide" />
+        </slide>
+        <slide>
+          <img src="assets/Promoções/promocao2.jpg" alt="second slide" />
+        </slide>
+        <slide>
+          <img src="assets/Promoções/promocao3.jpg" alt="third slide" />
+        </slide>
+        <slide>
+          <img src="assets/Promoções/promocao4.jpg" alt="third slide" />
+        </slide>
+      </carousel>
+    </div>
+    <div class="col-6 text-left mt-5">
+      <p>Motivo para você vir nos conhecer:</p>
+      <mat-list>
+        <mat-list-item> • Hamburgueres Artesanais. </mat-list-item>
+        <mat-list-item> • Preço que cabe no seu bolso. </mat-list-item>
+        <mat-list-item> • Profissionais qualificados. </mat-list-item>
+        <mat-list-item> • Hamburgueria mais bem avaliada. </mat-list-item>
+        <mat-list-item> • Espaço aconchegante e descontraído. </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="col-6 text-center mt-5">
+      <p>Ficou com vontade, né? Peça já, estamos com frete grátis.</p>
+      <img
+        src="https://media4.giphy.com/media/TLagOIWyYVAIwxFxK2/giphy.gif?cid=6c09b952bwz3hgtmpabkxjrderqmjaj1wgn3c7aq13xb0zvu&rid=giphy.gif&ct=s"
+        alt=""
+        style="width: 10rem; height: 10rem"
+      />
+      <p>Acesse o cardápio clicando <a routerLink="cardapio">aqui</a></p>
+    </div>
+  </div>
 </div>
