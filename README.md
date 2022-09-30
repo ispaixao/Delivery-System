@@ -42,3 +42,7 @@ Após inicializar sua API, abra um novo terminal e execute `cd Delivery` e `ng s
 
 [X] Cadastro de categorias.
 
+Code Scan Result
+
+[![DeepScan grade](https://deepscan.io/api/teams/19132/projects/22464/branches/663873/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=19132&pid=22464&bid=663873)
+
