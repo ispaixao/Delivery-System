@@ -1,19 +1,16 @@
+import { Component, OnInit } from '@angular/core';
 import {
-  AlertService,
-  AlertTypes,
-} from './../../../../shared/services/alert/alert.service';
+  FormBuilder, Validators
+} from '@angular/forms';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/shared/model/Usuario';
 import { UsuarioService } from '../../../../core/services/usuario/usuario.service';
 import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormControl,
-} from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
-import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { Usuario } from 'src/app/shared/model/Usuario';
+  AlertService,
+  AlertTypes
+} from './../../../../shared/services/alert/alert.service';
 import { senhaValidator } from './validators/senha.validators';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-usuarios',
@@ -41,9 +38,9 @@ export class CadastroUsuariosComponent implements OnInit {
     private usuarioService: UsuarioService,
     private alertService: AlertService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   validar(): void {
     const usuario = this.formUsuario.getRawValue() as Usuario;

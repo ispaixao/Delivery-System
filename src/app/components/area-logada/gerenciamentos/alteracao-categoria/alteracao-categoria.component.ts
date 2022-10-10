@@ -1,8 +1,7 @@
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoriasService } from 'src/app/core/services/categoria/categorias.service';
 import { Categoria, Categorias } from 'src/app/shared/model/Categoria';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { relativeTimeThreshold } from 'moment';
 import { AlertService, AlertTypes } from 'src/app/shared/services/alert/alert.service';
 
 @Component({

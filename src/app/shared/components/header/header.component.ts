@@ -1,8 +1,8 @@
-import { UsuarioLoginService } from './../../../core/services/usuario-login/usuario-login.service';
-import { Login } from '../../../shared/model/Login';
-import { Menus } from '../../../shared/model/Menu';
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from 'src/app/core/services/carrinho/carrinho.service';
+import { Login } from '../../../shared/model/Login';
+import { Menus } from '../../../shared/model/Menu';
+import { UsuarioLoginService } from './../../../core/services/usuario-login/usuario-login.service';
 
 @Component({
   selector: 'app-header',
@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
       router: '/contato',
     },
     {
-      nome: 'SOBRE NÓS',
+      nome: 'burguer',
       type: 'btn-primary',
       router: '/sobre-nos',
     },

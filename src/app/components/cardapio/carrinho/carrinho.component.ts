@@ -1,8 +1,6 @@
-import { Router } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Produto, Produtos } from 'src/app/shared/model/Produto';
+import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from 'src/app/core/services/carrinho/carrinho.service';
-import { ModalService } from 'src/app/shared/services/modal/modal.service';
+import { Produto, Produtos } from 'src/app/shared/model/Produto';
 
 @Component({
   selector: 'app-carrinho',

@@ -1,13 +1,11 @@
+import { Component, OnInit } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { CategoriasService } from 'src/app/core/services/categoria/categorias.service';
+import { Categorias } from 'src/app/shared/model/Categoria';
 import {
   AlertService,
-  AlertTypes,
+  AlertTypes
 } from '../../../shared/services/alert/alert.service';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Observable, catchError, delay } from 'rxjs';
-import { Categoria, Categorias } from 'src/app/shared/model/Categoria';
-import { CategoriasService } from 'src/app/core/services/categoria/categorias.service';
-import { AlertsComponent } from 'src/app/shared/components/alerts/alerts.component';
 
 @Component({
   selector: 'app-categorias',

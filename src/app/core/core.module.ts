@@ -1,11 +1,9 @@
-import { NgxBootstrapModule } from './Material/ngx-bootstrap/ngx-bootstrap.module';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AngularMaterialModule } from './Material/angular-material/angular-material.module';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { RouterModule } from '@angular/router';
+import { AngularMaterialModule } from './Material/angular-material/angular-material.module';
+import { NgxBootstrapModule } from './Material/ngx-bootstrap/ngx-bootstrap.module';
 
 const COMPONENTS = [];
 

@@ -1,12 +1,12 @@
-import { AlertService, AlertTypes } from './../../../../shared/services/alert/alert.service';
-import { ProdutosService } from 'src/app/core/services/produto/produtos.service';
-import { CadastroProdutoService } from './../../../../core/services/cadastro-produto/cadastro-produto.service';
-import { Produto } from 'src/app/shared/model/Produto';
-import { CategoriasService } from './../../../../core/services/categoria/categorias.service';
-import { Categorias } from 'src/app/shared/model/Categoria';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProdutosService } from 'src/app/core/services/produto/produtos.service';
+import { Categorias } from 'src/app/shared/model/Categoria';
+import { Produto } from 'src/app/shared/model/Produto';
+import { CadastroProdutoService } from './../../../../core/services/cadastro-produto/cadastro-produto.service';
+import { CategoriasService } from './../../../../core/services/categoria/categorias.service';
+import { AlertService, AlertTypes } from './../../../../shared/services/alert/alert.service';
 
 @Component({
   selector: 'app-cadastro-produtos',

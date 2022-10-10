@@ -1,9 +1,9 @@
-import { UsuarioLoginService } from './../usuario-login/usuario-login.service';
-import { Login } from 'src/app/shared/model/Login';
-import { environment } from './../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
+import { Login } from 'src/app/shared/model/Login';
+import { environment } from './../../../../environments/environment';
+import { UsuarioLoginService } from './../usuario-login/usuario-login.service';
 const API = environment.API;
 
 @Injectable({

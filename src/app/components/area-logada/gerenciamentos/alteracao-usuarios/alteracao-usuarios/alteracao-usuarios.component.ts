@@ -1,11 +1,11 @@
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/core/services/usuario/usuario.service';
+import { Usuario, Usuarios } from 'src/app/shared/model/Usuario';
 import {
   AlertService,
-  AlertTypes,
+  AlertTypes
 } from './../../../../../shared/services/alert/alert.service';
-import { UsuarioService } from 'src/app/core/services/usuario/usuario.service';
-import { Component, OnInit } from '@angular/core';
-import { Usuario, Usuarios } from 'src/app/shared/model/Usuario';
 
 @Component({
   selector: 'app-alteracao-usuarios',

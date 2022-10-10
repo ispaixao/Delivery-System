@@ -1,4 +1,4 @@
-import { AbstractControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 export function senhaValidator(formGroup: FormGroup) {
   const senha = formGroup.get('senha')?.value;

@@ -1,11 +1,11 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProdutosService } from './../../../../core/services/produto/produtos.service';
+import { Produto, Produtos } from './../../../../shared/model/Produto';
 import {
   AlertService,
-  AlertTypes,
+  AlertTypes
 } from './../../../../shared/services/alert/alert.service';
-import { Produto, Produtos } from './../../../../shared/model/Produto';
-import { ProdutosService } from './../../../../core/services/produto/produtos.service';
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-alteracao-produtos',

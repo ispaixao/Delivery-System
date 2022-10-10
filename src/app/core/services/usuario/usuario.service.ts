@@ -1,9 +1,9 @@
-import { Usuarios } from 'src/app/shared/model/Usuario';
-import { Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from '../../../shared/model/Usuario';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Usuarios } from 'src/app/shared/model/Usuario';
 import { environment } from 'src/environments/environment';
+import { Usuario } from '../../../shared/model/Usuario';
 const API = environment.API;
 
 @Injectable({

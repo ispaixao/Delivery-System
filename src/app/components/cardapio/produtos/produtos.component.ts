@@ -1,12 +1,11 @@
-import { BsModalRef } from 'ngx-bootstrap/modal';
-import { ModalService } from './../../../shared/services/modal/modal.service';
-import {
-  AlertService,
-  AlertTypes,
-} from '../../../shared/services/alert/alert.service';
-import { CarrinhoService } from './../../../core/services/carrinho/carrinho.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Produto, Produtos } from 'src/app/shared/model/Produto';
+import {
+  AlertService,
+  AlertTypes
+} from '../../../shared/services/alert/alert.service';
+import { CarrinhoService } from './../../../core/services/carrinho/carrinho.service';
+import { ModalService } from './../../../shared/services/modal/modal.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutosService } from 'src/app/core/services/produto/produtos.service';
